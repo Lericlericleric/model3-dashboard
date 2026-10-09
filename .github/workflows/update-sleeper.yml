@@ -1,0 +1,37 @@
+name: Update Sleeper players
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '37 10 * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-sleeper
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Fetch public Sleeper player data
+        run: python scripts/fetch_sleeper.py
+      - name: Commit refreshed data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add sleeper-players.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Refresh Sleeper player metadata"
+            git push
+          else
+            echo "No changes to commit"
+          fi
