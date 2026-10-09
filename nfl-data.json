@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "model": "elo-baseline-0.1",
-  "generatedAt": "2026-10-09T20:02:56.109693+00:00",
+  "model": "elo-baseline-0.1 + scoring-context-0.1",
+  "generatedAt": "2026-10-09T23:18:48.139644+00:00",
   "source": "https://raw.githubusercontent.com/nflverse/nfldata/master/data/games.csv",
   "season": 2026,
   "assumptions": {
@@ -9,13 +9,17 @@
     "homeFieldElo": 55.0,
     "k": 20.0,
     "offseasonRegression": 0.67,
-    "marginPointsPerElo": 25.0
+    "marginPointsPerElo": 25.0,
+    "scoringWindow": 8,
+    "scoringPriorGames": 4,
+    "scoringPriorPPG": 22.5
   },
   "validation": {
     "sampleGames": 920,
     "brier": 0.2271,
     "marginMAE": 10.37,
-    "note": "Chronological one-step-ahead evaluation 2023 onward; fixed parameters, not independently optimized. Includes only games with final scores."
+    "experimentalTotalMAE": 10.65,
+    "note": "Chronological one-step-ahead evaluation from 2023; fixed assumptions, not independently optimized or tested for profitability. Score context is a simple rolling average, not a calibrated totals model."
   },
   "games": [
     {
@@ -30,7 +34,19 @@
       "homeWin": 0.644,
       "projectedMargin": 4.1,
       "homeElo": 1588.8,
-      "awayElo": 1540.8
+      "awayElo": 1540.8,
+      "scoringContext": {
+        "projectedHomePoints": 22.5,
+        "projectedAwayPoints": 22.5,
+        "projectedTotal": 45.0,
+        "homeOffensePPG": 22.5,
+        "awayOffensePPG": 22.5,
+        "homeDefenseAllowedPPG": 22.5,
+        "awayDefenseAllowedPPG": 22.5,
+        "homeSampleGames": 0,
+        "awaySampleGames": 0,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_01_SF_LA",
@@ -44,7 +60,19 @@
       "homeWin": 0.6002,
       "projectedMargin": 2.8,
       "homeElo": 1555.0,
-      "awayElo": 1539.5
+      "awayElo": 1539.5,
+      "scoringContext": {
+        "projectedHomePoints": 22.5,
+        "projectedAwayPoints": 22.5,
+        "projectedTotal": 45.0,
+        "homeOffensePPG": 22.5,
+        "awayOffensePPG": 22.5,
+        "homeDefenseAllowedPPG": 22.5,
+        "awayDefenseAllowedPPG": 22.5,
+        "homeSampleGames": 0,
+        "awaySampleGames": 0,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_01_ATL_PIT",
@@ -58,7 +86,19 @@
       "homeWin": 0.6261,
       "projectedMargin": 3.6,
       "homeElo": 1519.1,
-      "awayElo": 1484.6
+      "awayElo": 1484.6,
+      "scoringContext": {
+        "projectedHomePoints": 22.5,
+        "projectedAwayPoints": 22.5,
+        "projectedTotal": 45.0,
+        "homeOffensePPG": 22.5,
+        "awayOffensePPG": 22.5,
+        "homeDefenseAllowedPPG": 22.5,
+        "awayDefenseAllowedPPG": 22.5,
+        "homeSampleGames": 0,
+        "awaySampleGames": 0,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_01_BAL_IND",
@@ -72,7 +112,19 @@
       "homeWin": 0.5159,
       "projectedMargin": 0.4,
       "homeElo": 1480.4,
-      "awayElo": 1524.4
+      "awayElo": 1524.4,
+      "scoringContext": {
+        "projectedHomePoints": 22.5,
+        "projectedAwayPoints": 22.5,
+        "projectedTotal": 45.0,
+        "homeOffensePPG": 22.5,
+        "awayOffensePPG": 22.5,
+        "homeDefenseAllowedPPG": 22.5,
+        "awayDefenseAllowedPPG": 22.5,
+        "homeSampleGames": 0,
+        "awaySampleGames": 0,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_01_BUF_HOU",
@@ -86,7 +138,19 @@
       "homeWin": 0.5515,
       "projectedMargin": 1.4,
       "homeElo": 1548.8,
-      "awayElo": 1567.9
+      "awayElo": 1567.9,
+      "scoringContext": {
+        "projectedHomePoints": 22.5,
+        "projectedAwayPoints": 22.5,
+        "projectedTotal": 45.0,
+        "homeOffensePPG": 22.5,
+        "awayOffensePPG": 22.5,
+        "homeDefenseAllowedPPG": 22.5,
+        "awayDefenseAllowedPPG": 22.5,
+        "homeSampleGames": 0,
+        "awaySampleGames": 0,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_01_CHI_CAR",
@@ -100,7 +164,19 @@
       "homeWin": 0.5053,
       "projectedMargin": 0.1,
       "homeElo": 1455.6,
-      "awayElo": 1507.0
+      "awayElo": 1507.0,
+      "scoringContext": {
+        "projectedHomePoints": 22.5,
+        "projectedAwayPoints": 22.5,
+        "projectedTotal": 45.0,
+        "homeOffensePPG": 22.5,
+        "awayOffensePPG": 22.5,
+        "homeDefenseAllowedPPG": 22.5,
+        "awayDefenseAllowedPPG": 22.5,
+        "homeSampleGames": 0,
+        "awaySampleGames": 0,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_01_CLE_JAX",
@@ -114,7 +190,19 @@
       "homeWin": 0.6761,
       "projectedMargin": 5.1,
       "homeElo": 1518.6,
-      "awayElo": 1445.7
+      "awayElo": 1445.7,
+      "scoringContext": {
+        "projectedHomePoints": 22.5,
+        "projectedAwayPoints": 22.5,
+        "projectedTotal": 45.0,
+        "homeOffensePPG": 22.5,
+        "awayOffensePPG": 22.5,
+        "homeDefenseAllowedPPG": 22.5,
+        "awayDefenseAllowedPPG": 22.5,
+        "homeSampleGames": 0,
+        "awaySampleGames": 0,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_01_NO_DET",
@@ -128,7 +216,19 @@
       "homeWin": 0.6953,
       "projectedMargin": 5.7,
       "homeElo": 1542.9,
-      "awayElo": 1454.6
+      "awayElo": 1454.6,
+      "scoringContext": {
+        "projectedHomePoints": 22.5,
+        "projectedAwayPoints": 22.5,
+        "projectedTotal": 45.0,
+        "homeOffensePPG": 22.5,
+        "awayOffensePPG": 22.5,
+        "homeDefenseAllowedPPG": 22.5,
+        "awayDefenseAllowedPPG": 22.5,
+        "homeSampleGames": 0,
+        "awaySampleGames": 0,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_01_NYJ_TEN",
@@ -142,7 +242,19 @@
       "homeWin": 0.5632,
       "projectedMargin": 1.8,
       "homeElo": 1408.1,
-      "awayElo": 1418.9
+      "awayElo": 1418.9,
+      "scoringContext": {
+        "projectedHomePoints": 22.5,
+        "projectedAwayPoints": 22.5,
+        "projectedTotal": 45.0,
+        "homeOffensePPG": 22.5,
+        "awayOffensePPG": 22.5,
+        "homeDefenseAllowedPPG": 22.5,
+        "awayDefenseAllowedPPG": 22.5,
+        "homeSampleGames": 0,
+        "awaySampleGames": 0,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_01_TB_CIN",
@@ -156,7 +268,19 @@
       "homeWin": 0.5659,
       "projectedMargin": 1.8,
       "homeElo": 1482.8,
-      "awayElo": 1491.7
+      "awayElo": 1491.7,
+      "scoringContext": {
+        "projectedHomePoints": 22.5,
+        "projectedAwayPoints": 22.5,
+        "projectedTotal": 45.0,
+        "homeOffensePPG": 22.5,
+        "awayOffensePPG": 22.5,
+        "homeDefenseAllowedPPG": 22.5,
+        "awayDefenseAllowedPPG": 22.5,
+        "homeSampleGames": 0,
+        "awaySampleGames": 0,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_01_ARI_LAC",
@@ -170,7 +294,19 @@
       "homeWin": 0.7096,
       "projectedMargin": 6.2,
       "homeElo": 1524.0,
-      "awayElo": 1423.8
+      "awayElo": 1423.8,
+      "scoringContext": {
+        "projectedHomePoints": 22.5,
+        "projectedAwayPoints": 22.5,
+        "projectedTotal": 45.0,
+        "homeOffensePPG": 22.5,
+        "awayOffensePPG": 22.5,
+        "homeDefenseAllowedPPG": 22.5,
+        "awayDefenseAllowedPPG": 22.5,
+        "homeSampleGames": 0,
+        "awaySampleGames": 0,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_01_GB_MIN",
@@ -184,7 +320,19 @@
       "homeWin": 0.6004,
       "projectedMargin": 2.8,
       "homeElo": 1534.0,
-      "awayElo": 1518.2
+      "awayElo": 1518.2,
+      "scoringContext": {
+        "projectedHomePoints": 22.5,
+        "projectedAwayPoints": 22.5,
+        "projectedTotal": 45.0,
+        "homeOffensePPG": 22.5,
+        "awayOffensePPG": 22.5,
+        "homeDefenseAllowedPPG": 22.5,
+        "awayDefenseAllowedPPG": 22.5,
+        "homeSampleGames": 0,
+        "awaySampleGames": 0,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_01_MIA_LV",
@@ -198,7 +346,19 @@
       "homeWin": 0.4828,
       "projectedMargin": -0.5,
       "homeElo": 1415.6,
-      "awayElo": 1482.6
+      "awayElo": 1482.6,
+      "scoringContext": {
+        "projectedHomePoints": 22.5,
+        "projectedAwayPoints": 22.5,
+        "projectedTotal": 45.0,
+        "homeOffensePPG": 22.5,
+        "awayOffensePPG": 22.5,
+        "homeDefenseAllowedPPG": 22.5,
+        "awayDefenseAllowedPPG": 22.5,
+        "homeSampleGames": 0,
+        "awaySampleGames": 0,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_01_WAS_PHI",
@@ -212,7 +372,19 @@
       "homeWin": 0.6881,
       "projectedMargin": 5.5,
       "homeElo": 1559.3,
-      "awayElo": 1476.9
+      "awayElo": 1476.9,
+      "scoringContext": {
+        "projectedHomePoints": 22.5,
+        "projectedAwayPoints": 22.5,
+        "projectedTotal": 45.0,
+        "homeOffensePPG": 22.5,
+        "awayOffensePPG": 22.5,
+        "homeDefenseAllowedPPG": 22.5,
+        "awayDefenseAllowedPPG": 22.5,
+        "homeSampleGames": 0,
+        "awaySampleGames": 0,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_01_DAL_NYG",
@@ -226,7 +398,19 @@
       "homeWin": 0.489,
       "projectedMargin": -0.3,
       "homeElo": 1427.5,
-      "awayElo": 1490.2
+      "awayElo": 1490.2,
+      "scoringContext": {
+        "projectedHomePoints": 22.5,
+        "projectedAwayPoints": 22.5,
+        "projectedTotal": 45.0,
+        "homeOffensePPG": 22.5,
+        "awayOffensePPG": 22.5,
+        "homeDefenseAllowedPPG": 22.5,
+        "awayDefenseAllowedPPG": 22.5,
+        "homeSampleGames": 0,
+        "awaySampleGames": 0,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_01_DEN_KC",
@@ -240,7 +424,19 @@
       "homeWin": 0.5131,
       "projectedMargin": 0.4,
       "homeElo": 1514.8,
-      "awayElo": 1560.7
+      "awayElo": 1560.7,
+      "scoringContext": {
+        "projectedHomePoints": 22.5,
+        "projectedAwayPoints": 22.5,
+        "projectedTotal": 45.0,
+        "homeOffensePPG": 22.5,
+        "awayOffensePPG": 22.5,
+        "homeDefenseAllowedPPG": 22.5,
+        "awayDefenseAllowedPPG": 22.5,
+        "homeSampleGames": 0,
+        "awaySampleGames": 0,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_02_DET_BUF",
@@ -254,7 +450,19 @@
       "homeWin": 0.6197,
       "projectedMargin": 3.4,
       "homeElo": 1578.9,
-      "awayElo": 1549.0
+      "awayElo": 1549.0,
+      "scoringContext": {
+        "projectedHomePoints": 24.6,
+        "projectedAwayPoints": 24.2,
+        "projectedTotal": 48.8,
+        "homeOffensePPG": 25.2,
+        "awayOffensePPG": 24.2,
+        "homeDefenseAllowedPPG": 24.2,
+        "awayDefenseAllowedPPG": 24.0,
+        "homeSampleGames": 1,
+        "awaySampleGames": 1,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_02_CAR_ATL",
@@ -268,7 +476,19 @@
       "homeWin": 0.6221,
       "projectedMargin": 3.5,
       "homeElo": 1477.1,
-      "awayElo": 1445.5
+      "awayElo": 1445.5,
+      "scoringContext": {
+        "projectedHomePoints": 25.2,
+        "projectedAwayPoints": 23.7,
+        "projectedTotal": 48.9,
+        "homeOffensePPG": 20.6,
+        "awayOffensePPG": 25.4,
+        "homeDefenseAllowedPPG": 22.0,
+        "awayDefenseAllowedPPG": 29.8,
+        "homeSampleGames": 1,
+        "awaySampleGames": 1,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_02_CIN_HOU",
@@ -282,7 +502,19 @@
       "homeWin": 0.6417,
       "projectedMargin": 4.1,
       "homeElo": 1537.8,
-      "awayElo": 1491.5
+      "awayElo": 1491.5,
+      "scoringContext": {
+        "projectedHomePoints": 23.8,
+        "projectedAwayPoints": 24.9,
+        "projectedTotal": 48.7,
+        "homeOffensePPG": 24.2,
+        "awayOffensePPG": 24.6,
+        "homeDefenseAllowedPPG": 25.2,
+        "awayDefenseAllowedPPG": 23.4,
+        "homeSampleGames": 1,
+        "awaySampleGames": 1,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_02_CLE_TB",
@@ -296,7 +528,19 @@
       "homeWin": 0.6385,
       "projectedMargin": 4.0,
       "homeElo": 1483.0,
-      "awayElo": 1439.2
+      "awayElo": 1439.2,
+      "scoringContext": {
+        "projectedHomePoints": 24.1,
+        "projectedAwayPoints": 22.3,
+        "projectedTotal": 46.4,
+        "homeOffensePPG": 23.4,
+        "awayOffensePPG": 20.0,
+        "homeDefenseAllowedPPG": 24.6,
+        "awayDefenseAllowedPPG": 24.8,
+        "homeSampleGames": 1,
+        "awaySampleGames": 1,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_02_GB_NYJ",
@@ -310,7 +554,19 @@
       "homeWin": 0.464,
       "projectedMargin": -1.0,
       "homeElo": 1430.2,
-      "awayElo": 1510.2
+      "awayElo": 1510.2,
+      "scoringContext": {
+        "projectedHomePoints": 24.2,
+        "projectedAwayPoints": 21.2,
+        "projectedTotal": 45.4,
+        "homeOffensePPG": 22.6,
+        "awayOffensePPG": 22.4,
+        "homeDefenseAllowedPPG": 20.0,
+        "awayDefenseAllowedPPG": 25.8,
+        "homeSampleGames": 1,
+        "awaySampleGames": 1,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_02_MIN_CHI",
@@ -324,7 +580,19 @@
       "homeWin": 0.5432,
       "projectedMargin": 1.2,
       "homeElo": 1517.1,
-      "awayElo": 1542.0
+      "awayElo": 1542.0,
+      "scoringContext": {
+        "projectedHomePoints": 26.1,
+        "projectedAwayPoints": 25.6,
+        "projectedTotal": 51.7,
+        "homeOffensePPG": 29.8,
+        "awayOffensePPG": 25.8,
+        "homeDefenseAllowedPPG": 25.4,
+        "awayDefenseAllowedPPG": 22.4,
+        "homeSampleGames": 1,
+        "awaySampleGames": 1,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_02_NO_BAL",
@@ -338,7 +606,19 @@
       "homeWin": 0.6927,
       "projectedMargin": 5.6,
       "homeElo": 1534.7,
-      "awayElo": 1448.5
+      "awayElo": 1448.5,
+      "scoringContext": {
+        "projectedHomePoints": 25.2,
+        "projectedAwayPoints": 23.3,
+        "projectedTotal": 48.5,
+        "homeOffensePPG": 26.2,
+        "awayOffensePPG": 24.0,
+        "homeDefenseAllowedPPG": 22.6,
+        "awayDefenseAllowedPPG": 24.2,
+        "homeSampleGames": 1,
+        "awaySampleGames": 1,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_02_PHI_TEN",
@@ -352,7 +632,19 @@
       "homeWin": 0.3419,
       "projectedMargin": -4.6,
       "homeElo": 1396.8,
-      "awayElo": 1565.6
+      "awayElo": 1565.6,
+      "scoringContext": {
+        "projectedHomePoints": 21.2,
+        "projectedAwayPoints": 22.7,
+        "projectedTotal": 43.9,
+        "homeOffensePPG": 20.0,
+        "awayOffensePPG": 22.8,
+        "homeDefenseAllowedPPG": 22.6,
+        "awayDefenseAllowedPPG": 22.4,
+        "homeSampleGames": 1,
+        "awaySampleGames": 1,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_02_PIT_NE",
@@ -366,7 +658,19 @@
       "homeWin": 0.5884,
       "projectedMargin": 2.5,
       "homeElo": 1533.7,
-      "awayElo": 1526.6
+      "awayElo": 1526.6,
+      "scoringContext": {
+        "projectedHomePoints": 20.3,
+        "projectedAwayPoints": 21.3,
+        "projectedTotal": 41.6,
+        "homeOffensePPG": 20.0,
+        "awayOffensePPG": 22.0,
+        "homeDefenseAllowedPPG": 20.6,
+        "awayDefenseAllowedPPG": 20.6,
+        "homeSampleGames": 1,
+        "awaySampleGames": 1,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_02_JAX_DEN",
@@ -380,7 +684,19 @@
       "homeWin": 0.6144,
       "projectedMargin": 3.2,
       "homeElo": 1551.0,
-      "awayElo": 1525.1
+      "awayElo": 1525.1,
+      "scoringContext": {
+        "projectedHomePoints": 20.0,
+        "projectedAwayPoints": 24.5,
+        "projectedTotal": 44.5,
+        "homeOffensePPG": 20.0,
+        "awayOffensePPG": 24.8,
+        "homeDefenseAllowedPPG": 24.2,
+        "awayDefenseAllowedPPG": 20.0,
+        "homeSampleGames": 1,
+        "awaySampleGames": 1,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_02_LV_LAC",
@@ -394,7 +710,19 @@
       "homeWin": 0.6898,
       "projectedMargin": 5.6,
       "homeElo": 1509.8,
-      "awayElo": 1426.0
+      "awayElo": 1426.0,
+      "scoringContext": {
+        "projectedHomePoints": 20.7,
+        "projectedAwayPoints": 23.3,
+        "projectedTotal": 44.0,
+        "homeOffensePPG": 20.8,
+        "awayOffensePPG": 23.4,
+        "homeDefenseAllowedPPG": 23.2,
+        "awayDefenseAllowedPPG": 20.6,
+        "homeSampleGames": 1,
+        "awaySampleGames": 1,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_02_MIA_SF",
@@ -408,7 +736,19 @@
       "homeWin": 0.6841,
       "projectedMargin": 5.4,
       "homeElo": 1551.5,
-      "awayElo": 1472.3
+      "awayElo": 1472.3,
+      "scoringContext": {
+        "projectedHomePoints": 23.4,
+        "projectedAwayPoints": 20.0,
+        "projectedTotal": 43.4,
+        "homeOffensePPG": 23.4,
+        "awayOffensePPG": 20.6,
+        "homeDefenseAllowedPPG": 19.4,
+        "awayDefenseAllowedPPG": 23.4,
+        "homeSampleGames": 1,
+        "awaySampleGames": 1,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_02_SEA_ARI",
@@ -422,7 +762,19 @@
       "homeWin": 0.356,
       "projectedMargin": -4.1,
       "homeElo": 1437.9,
-      "awayElo": 1595.9
+      "awayElo": 1595.9,
+      "scoringContext": {
+        "projectedHomePoints": 21.6,
+        "projectedAwayPoints": 20.7,
+        "projectedTotal": 42.3,
+        "homeOffensePPG": 23.2,
+        "awayOffensePPG": 20.6,
+        "homeDefenseAllowedPPG": 20.8,
+        "awayDefenseAllowedPPG": 20.0,
+        "homeSampleGames": 1,
+        "awaySampleGames": 1,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_02_WAS_DAL",
@@ -436,7 +788,19 @@
       "homeWin": 0.5915,
       "projectedMargin": 2.6,
       "homeElo": 1480.0,
-      "awayElo": 1470.7
+      "awayElo": 1470.7,
+      "scoringContext": {
+        "projectedHomePoints": 22.4,
+        "projectedAwayPoints": 23.0,
+        "projectedTotal": 45.4,
+        "homeOffensePPG": 22.0,
+        "awayOffensePPG": 22.4,
+        "homeDefenseAllowedPPG": 23.6,
+        "awayDefenseAllowedPPG": 22.8,
+        "homeSampleGames": 1,
+        "awaySampleGames": 1,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_02_IND_KC",
@@ -450,7 +814,19 @@
       "homeWin": 0.6525,
       "projectedMargin": 4.4,
       "homeElo": 1524.6,
-      "awayElo": 1470.1
+      "awayElo": 1470.1,
+      "scoringContext": {
+        "projectedHomePoints": 25.2,
+        "projectedAwayPoints": 21.3,
+        "projectedTotal": 46.5,
+        "homeOffensePPG": 24.2,
+        "awayOffensePPG": 22.6,
+        "homeDefenseAllowedPPG": 20.0,
+        "awayDefenseAllowedPPG": 26.2,
+        "homeSampleGames": 1,
+        "awaySampleGames": 1,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_02_NYG_LA",
@@ -464,7 +840,19 @@
       "homeWin": 0.7156,
       "projectedMargin": 6.4,
       "homeElo": 1543.0,
-      "awayElo": 1437.8
+      "awayElo": 1437.8,
+      "scoringContext": {
+        "projectedHomePoints": 20.7,
+        "projectedAwayPoints": 23.5,
+        "projectedTotal": 44.2,
+        "homeOffensePPG": 19.4,
+        "awayOffensePPG": 23.6,
+        "homeDefenseAllowedPPG": 23.4,
+        "awayDefenseAllowedPPG": 22.0,
+        "homeSampleGames": 1,
+        "awaySampleGames": 1,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_03_ATL_GB",
@@ -478,7 +866,19 @@
       "homeWin": 0.653,
       "projectedMargin": 4.4,
       "homeElo": 1519.5,
-      "awayElo": 1464.7
+      "awayElo": 1464.7,
+      "scoringContext": {
+        "projectedHomePoints": 23.0,
+        "projectedAwayPoints": 21.0,
+        "projectedTotal": 44.0,
+        "homeOffensePPG": 22.0,
+        "awayOffensePPG": 17.7,
+        "homeDefenseAllowedPPG": 24.3,
+        "awayDefenseAllowedPPG": 24.0,
+        "homeSampleGames": 2,
+        "awaySampleGames": 2,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_03_CAR_CLE",
@@ -492,7 +892,19 @@
       "homeWin": 0.5701,
       "projectedMargin": 2.0,
       "homeElo": 1452.0,
-      "awayElo": 1458.0
+      "awayElo": 1458.0,
+      "scoringContext": {
+        "projectedHomePoints": 22.9,
+        "projectedAwayPoints": 25.3,
+        "projectedTotal": 48.2,
+        "homeOffensePPG": 20.5,
+        "awayOffensePPG": 26.8,
+        "homeDefenseAllowedPPG": 23.8,
+        "awayDefenseAllowedPPG": 25.3,
+        "homeSampleGames": 2,
+        "awaySampleGames": 2,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_03_CIN_PIT",
@@ -506,7 +918,19 @@
       "homeWin": 0.5981,
       "projectedMargin": 2.8,
       "homeElo": 1518.4,
-      "awayElo": 1504.3
+      "awayElo": 1504.3,
+      "scoringContext": {
+        "projectedHomePoints": 19.7,
+        "projectedAwayPoints": 22.2,
+        "projectedTotal": 41.8,
+        "homeOffensePPG": 18.8,
+        "awayOffensePPG": 23.8,
+        "homeDefenseAllowedPPG": 20.5,
+        "awayDefenseAllowedPPG": 20.5,
+        "homeSampleGames": 2,
+        "awaySampleGames": 2,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_03_HOU_IND",
@@ -520,7 +944,19 @@
       "homeWin": 0.4903,
       "projectedMargin": -0.3,
       "homeElo": 1463.2,
-      "awayElo": 1524.9
+      "awayElo": 1524.9,
+      "scoringContext": {
+        "projectedHomePoints": 24.1,
+        "projectedAwayPoints": 24.2,
+        "projectedTotal": 48.3,
+        "homeOffensePPG": 23.8,
+        "awayOffensePPG": 21.2,
+        "homeDefenseAllowedPPG": 27.3,
+        "awayDefenseAllowedPPG": 24.3,
+        "homeSampleGames": 2,
+        "awaySampleGames": 2,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_03_KC_MIA",
@@ -534,7 +970,19 @@
       "homeWin": 0.4848,
       "projectedMargin": -0.4,
       "homeElo": 1465.9,
-      "awayElo": 1531.5
+      "awayElo": 1531.5,
+      "scoringContext": {
+        "projectedHomePoints": 20.5,
+        "projectedAwayPoints": 25.5,
+        "projectedTotal": 46.0,
+        "homeOffensePPG": 19.3,
+        "awayOffensePPG": 25.7,
+        "homeDefenseAllowedPPG": 25.3,
+        "awayDefenseAllowedPPG": 21.7,
+        "homeSampleGames": 2,
+        "awaySampleGames": 2,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_03_LAC_BUF",
@@ -548,7 +996,19 @@
       "homeWin": 0.698,
       "projectedMargin": 5.8,
       "homeElo": 1586.5,
-      "awayElo": 1496.0
+      "awayElo": 1496.0,
+      "scoringContext": {
+        "projectedHomePoints": 25.8,
+        "projectedAwayPoints": 22.5,
+        "projectedTotal": 48.2,
+        "homeOffensePPG": 27.8,
+        "awayOffensePPG": 19.7,
+        "homeDefenseAllowedPPG": 25.3,
+        "awayDefenseAllowedPPG": 23.7,
+        "homeSampleGames": 2,
+        "awaySampleGames": 2,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_03_NE_JAX",
@@ -562,7 +1022,19 @@
       "homeWin": 0.5437,
       "projectedMargin": 1.2,
       "homeElo": 1517.3,
-      "awayElo": 1541.9
+      "awayElo": 1541.9,
+      "scoringContext": {
+        "projectedHomePoints": 20.2,
+        "projectedAwayPoints": 20.0,
+        "projectedTotal": 40.2,
+        "homeOffensePPG": 22.8,
+        "awayOffensePPG": 20.0,
+        "homeDefenseAllowedPPG": 20.0,
+        "awayDefenseAllowedPPG": 17.7,
+        "homeSampleGames": 2,
+        "awaySampleGames": 2,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_03_NYJ_DET",
@@ -576,7 +1048,19 @@
       "homeWin": 0.7331,
       "projectedMargin": 7.0,
       "homeElo": 1541.4,
-      "awayElo": 1420.9
+      "awayElo": 1420.9,
+      "scoringContext": {
+        "projectedHomePoints": 22.7,
+        "projectedAwayPoints": 24.2,
+        "projectedTotal": 46.9,
+        "homeOffensePPG": 25.3,
+        "awayOffensePPG": 21.7,
+        "homeDefenseAllowedPPG": 26.8,
+        "awayDefenseAllowedPPG": 20.0,
+        "homeSampleGames": 2,
+        "awaySampleGames": 2,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_03_SEA_WAS",
@@ -590,7 +1074,19 @@
       "homeWin": 0.3793,
       "projectedMargin": -3.4,
       "homeElo": 1462.5,
-      "awayElo": 1603.0
+      "awayElo": 1603.0,
+      "scoringContext": {
+        "projectedHomePoints": 19.9,
+        "projectedAwayPoints": 23.8,
+        "projectedTotal": 43.7,
+        "homeOffensePPG": 22.0,
+        "awayOffensePPG": 22.3,
+        "homeDefenseAllowedPPG": 25.2,
+        "awayDefenseAllowedPPG": 17.8,
+        "homeSampleGames": 2,
+        "awaySampleGames": 2,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_03_TEN_NYG",
@@ -604,7 +1100,19 @@
       "homeWin": 0.6362,
       "projectedMargin": 3.9,
       "homeElo": 1432.1,
-      "awayElo": 1390.0
+      "awayElo": 1390.0,
+      "scoringContext": {
+        "projectedHomePoints": 21.8,
+        "projectedAwayPoints": 21.5,
+        "projectedTotal": 43.2,
+        "homeOffensePPG": 20.7,
+        "awayOffensePPG": 20.0,
+        "homeDefenseAllowedPPG": 23.0,
+        "awayDefenseAllowedPPG": 22.8,
+        "homeSampleGames": 2,
+        "awaySampleGames": 2,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_03_ARI_SF",
@@ -618,7 +1126,19 @@
       "homeWin": 0.7403,
       "projectedMargin": 7.3,
       "homeElo": 1557.8,
-      "awayElo": 1430.8
+      "awayElo": 1430.8,
+      "scoringContext": {
+        "projectedHomePoints": 23.9,
+        "projectedAwayPoints": 19.4,
+        "projectedTotal": 43.3,
+        "homeOffensePPG": 25.3,
+        "awayOffensePPG": 20.5,
+        "homeDefenseAllowedPPG": 18.3,
+        "awayDefenseAllowedPPG": 22.5,
+        "homeSampleGames": 2,
+        "awaySampleGames": 2,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_03_MIN_TB",
@@ -632,7 +1152,19 @@
       "homeWin": 0.4604,
       "projectedMargin": -1.1,
       "homeElo": 1470.3,
-      "awayElo": 1552.8
+      "awayElo": 1552.8,
+      "scoringContext": {
+        "projectedHomePoints": 20.9,
+        "projectedAwayPoints": 23.7,
+        "projectedTotal": 44.6,
+        "homeOffensePPG": 22.7,
+        "awayOffensePPG": 23.0,
+        "homeDefenseAllowedPPG": 24.3,
+        "awayDefenseAllowedPPG": 19.2,
+        "homeSampleGames": 2,
+        "awaySampleGames": 2,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_03_BAL_DAL",
@@ -646,7 +1178,19 @@
       "homeWin": 0.5321,
       "projectedMargin": 0.9,
       "homeElo": 1488.1,
-      "awayElo": 1520.8
+      "awayElo": 1520.8,
+      "scoringContext": {
+        "projectedHomePoints": 23.7,
+        "projectedAwayPoints": 23.8,
+        "projectedTotal": 47.5,
+        "homeOffensePPG": 24.5,
+        "awayOffensePPG": 24.7,
+        "homeDefenseAllowedPPG": 23.0,
+        "awayDefenseAllowedPPG": 22.8,
+        "homeSampleGames": 2,
+        "awaySampleGames": 2,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_03_LV_NO",
@@ -660,7 +1204,19 @@
       "homeWin": 0.6098,
       "projectedMargin": 3.1,
       "homeElo": 1462.3,
-      "awayElo": 1439.8
+      "awayElo": 1439.8,
+      "scoringContext": {
+        "projectedHomePoints": 21.8,
+        "projectedAwayPoints": 23.4,
+        "projectedTotal": 45.2,
+        "homeOffensePPG": 24.0,
+        "awayOffensePPG": 23.8,
+        "homeDefenseAllowedPPG": 23.0,
+        "awayDefenseAllowedPPG": 19.5,
+        "homeSampleGames": 2,
+        "awaySampleGames": 2,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_03_LA_DEN",
@@ -674,7 +1230,19 @@
       "homeWin": 0.5924,
       "projectedMargin": 2.6,
       "homeElo": 1558.7,
-      "awayElo": 1548.7
+      "awayElo": 1548.7,
+      "scoringContext": {
+        "projectedHomePoints": 20.2,
+        "projectedAwayPoints": 21.6,
+        "projectedTotal": 41.8,
+        "homeOffensePPG": 20.0,
+        "awayOffensePPG": 20.8,
+        "homeDefenseAllowedPPG": 22.3,
+        "awayDefenseAllowedPPG": 20.5,
+        "homeSampleGames": 2,
+        "awaySampleGames": 2,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_03_PHI_CHI",
@@ -688,7 +1256,19 @@
       "homeWin": 0.4839,
       "projectedMargin": -0.4,
       "homeElo": 1506.2,
-      "awayElo": 1572.4
+      "awayElo": 1572.4,
+      "scoringContext": {
+        "projectedHomePoints": 23.7,
+        "projectedAwayPoints": 22.8,
+        "projectedTotal": 46.5,
+        "homeOffensePPG": 25.3,
+        "awayOffensePPG": 23.0,
+        "homeDefenseAllowedPPG": 22.7,
+        "awayDefenseAllowedPPG": 22.0,
+        "homeSampleGames": 2,
+        "awaySampleGames": 2,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_04_PIT_CLE",
@@ -702,7 +1282,19 @@
       "homeWin": 0.4844,
       "projectedMargin": -0.4,
       "homeElo": 1460.6,
-      "awayElo": 1526.4
+      "awayElo": 1526.4,
+      "scoringContext": {
+        "projectedHomePoints": 21.0,
+        "projectedAwayPoints": 21.7,
+        "projectedTotal": 42.7,
+        "homeOffensePPG": 20.6,
+        "awayOffensePPG": 20.4,
+        "homeDefenseAllowedPPG": 23.0,
+        "awayDefenseAllowedPPG": 21.4,
+        "homeSampleGames": 3,
+        "awaySampleGames": 3,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_04_IND_WAS",
@@ -716,7 +1308,19 @@
       "homeWin": 0.5807,
       "projectedMargin": 2.3,
       "homeElo": 1474.9,
-      "awayElo": 1473.3
+      "awayElo": 1473.3,
+      "scoringContext": {
+        "projectedHomePoints": 24.7,
+        "projectedAwayPoints": 24.6,
+        "projectedTotal": 49.3,
+        "homeOffensePPG": 23.6,
+        "awayOffensePPG": 23.1,
+        "homeDefenseAllowedPPG": 26.0,
+        "awayDefenseAllowedPPG": 25.9,
+        "homeSampleGames": 3,
+        "awaySampleGames": 3,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_04_ARI_NYG",
@@ -730,7 +1334,19 @@
       "homeWin": 0.5976,
       "projectedMargin": 2.7,
       "homeElo": 1439.3,
-      "awayElo": 1425.6
+      "awayElo": 1425.6,
+      "scoringContext": {
+        "projectedHomePoints": 21.9,
+        "projectedAwayPoints": 21.3,
+        "projectedTotal": 43.2,
+        "homeOffensePPG": 19.4,
+        "awayOffensePPG": 21.9,
+        "homeDefenseAllowedPPG": 20.7,
+        "awayDefenseAllowedPPG": 24.4,
+        "homeSampleGames": 3,
+        "awaySampleGames": 3,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_04_DAL_HOU",
@@ -744,7 +1360,19 @@
       "homeWin": 0.6297,
       "projectedMargin": 3.7,
       "homeElo": 1514.7,
-      "awayElo": 1477.5
+      "awayElo": 1477.5,
+      "scoringContext": {
+        "projectedHomePoints": 22.6,
+        "projectedAwayPoints": 24.5,
+        "projectedTotal": 47.1,
+        "homeOffensePPG": 20.6,
+        "awayOffensePPG": 25.4,
+        "homeDefenseAllowedPPG": 23.6,
+        "awayDefenseAllowedPPG": 24.6,
+        "homeSampleGames": 3,
+        "awaySampleGames": 3,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_04_GB_TB",
@@ -758,7 +1386,19 @@
       "homeWin": 0.5138,
       "projectedMargin": 0.4,
       "homeElo": 1461.1,
-      "awayElo": 1506.5
+      "awayElo": 1506.5,
+      "scoringContext": {
+        "projectedHomePoints": 23.8,
+        "projectedAwayPoints": 22.5,
+        "projectedTotal": 46.3,
+        "homeOffensePPG": 21.7,
+        "awayOffensePPG": 20.9,
+        "homeDefenseAllowedPPG": 24.1,
+        "awayDefenseAllowedPPG": 25.9,
+        "homeSampleGames": 3,
+        "awaySampleGames": 3,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_04_JAX_CIN",
@@ -772,7 +1412,19 @@
       "homeWin": 0.5356,
       "projectedMargin": 1.0,
       "homeElo": 1496.3,
-      "awayElo": 1526.5
+      "awayElo": 1526.5,
+      "scoringContext": {
+        "projectedHomePoints": 21.1,
+        "projectedAwayPoints": 23.2,
+        "projectedTotal": 44.4,
+        "homeOffensePPG": 24.3,
+        "awayOffensePPG": 24.6,
+        "homeDefenseAllowedPPG": 21.9,
+        "awayDefenseAllowedPPG": 18.0,
+        "homeSampleGames": 3,
+        "awaySampleGames": 3,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_04_LA_PHI",
@@ -786,7 +1438,19 @@
       "homeWin": 0.6084,
       "projectedMargin": 3.1,
       "homeElo": 1562.1,
-      "awayElo": 1540.6
+      "awayElo": 1540.6,
+      "scoringContext": {
+        "projectedHomePoints": 21.3,
+        "projectedAwayPoints": 22.1,
+        "projectedTotal": 43.4,
+        "homeOffensePPG": 20.7,
+        "awayOffensePPG": 21.6,
+        "homeDefenseAllowedPPG": 22.7,
+        "awayDefenseAllowedPPG": 21.9,
+        "homeSampleGames": 3,
+        "awaySampleGames": 3,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_04_NE_BUF",
@@ -800,7 +1464,19 @@
       "homeWin": 0.6594,
       "projectedMargin": 4.6,
       "homeElo": 1592.5,
-      "awayElo": 1532.8
+      "awayElo": 1532.8,
+      "scoringContext": {
+        "projectedHomePoints": 23.7,
+        "projectedAwayPoints": 21.0,
+        "projectedTotal": 44.7,
+        "homeOffensePPG": 27.3,
+        "awayOffensePPG": 18.0,
+        "homeDefenseAllowedPPG": 24.0,
+        "awayDefenseAllowedPPG": 20.1,
+        "homeSampleGames": 3,
+        "awaySampleGames": 3,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_04_NYJ_CHI",
@@ -814,7 +1490,19 @@
       "homeWin": 0.7105,
       "projectedMargin": 6.2,
       "homeElo": 1516.5,
-      "awayElo": 1415.6
+      "awayElo": 1415.6,
+      "scoringContext": {
+        "projectedHomePoints": 23.6,
+        "projectedAwayPoints": 21.2,
+        "projectedTotal": 44.8,
+        "homeOffensePPG": 25.6,
+        "awayOffensePPG": 22.0,
+        "homeDefenseAllowedPPG": 20.4,
+        "awayDefenseAllowedPPG": 21.6,
+        "homeSampleGames": 3,
+        "awaySampleGames": 3,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_04_TEN_BAL",
@@ -828,7 +1516,19 @@
       "homeWin": 0.7637,
       "projectedMargin": 8.2,
       "homeElo": 1531.5,
-      "awayElo": 1382.7
+      "awayElo": 1382.7,
+      "scoringContext": {
+        "projectedHomePoints": 23.6,
+        "projectedAwayPoints": 21.1,
+        "projectedTotal": 44.7,
+        "homeOffensePPG": 26.0,
+        "awayOffensePPG": 18.1,
+        "homeDefenseAllowedPPG": 24.0,
+        "awayDefenseAllowedPPG": 21.3,
+        "homeSampleGames": 3,
+        "awaySampleGames": 3,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_04_MIA_MIN",
@@ -842,7 +1542,19 @@
       "homeWin": 0.7162,
       "projectedMargin": 6.4,
       "homeElo": 1562.0,
-      "awayElo": 1456.2
+      "awayElo": 1456.2,
+      "scoringContext": {
+        "projectedHomePoints": 24.1,
+        "projectedAwayPoints": 18.4,
+        "projectedTotal": 42.4,
+        "homeOffensePPG": 23.0,
+        "awayOffensePPG": 18.0,
+        "homeDefenseAllowedPPG": 18.7,
+        "awayDefenseAllowedPPG": 25.1,
+        "homeSampleGames": 3,
+        "awaySampleGames": 3,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_04_DEN_SF",
@@ -856,7 +1568,19 @@
       "homeWin": 0.5731,
       "projectedMargin": 2.0,
       "homeElo": 1563.0,
-      "awayElo": 1566.8
+      "awayElo": 1566.8,
+      "scoringContext": {
+        "projectedHomePoints": 24.9,
+        "projectedAwayPoints": 20.7,
+        "projectedTotal": 45.6,
+        "homeOffensePPG": 26.9,
+        "awayOffensePPG": 21.4,
+        "homeDefenseAllowedPPG": 20.0,
+        "awayDefenseAllowedPPG": 22.9,
+        "homeSampleGames": 3,
+        "awaySampleGames": 3,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_04_KC_LV",
@@ -870,7 +1594,19 @@
       "homeWin": 0.4509,
       "projectedMargin": -1.4,
       "homeElo": 1452.0,
-      "awayElo": 1541.2
+      "awayElo": 1541.2,
+      "scoringContext": {
+        "projectedHomePoints": 22.7,
+        "projectedAwayPoints": 23.0,
+        "projectedTotal": 45.7,
+        "homeOffensePPG": 25.4,
+        "awayOffensePPG": 25.4,
+        "homeDefenseAllowedPPG": 20.6,
+        "awayDefenseAllowedPPG": 20.0,
+        "homeSampleGames": 3,
+        "awaySampleGames": 3,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_04_LAC_SEA",
@@ -884,7 +1620,19 @@
       "homeWin": 0.7102,
       "projectedMargin": 6.2,
       "homeElo": 1590.6,
-      "awayElo": 1489.9
+      "awayElo": 1489.9,
+      "scoringContext": {
+        "projectedHomePoints": 23.6,
+        "projectedAwayPoints": 19.6,
+        "projectedTotal": 43.2,
+        "homeOffensePPG": 23.6,
+        "awayOffensePPG": 19.1,
+        "homeDefenseAllowedPPG": 20.0,
+        "awayDefenseAllowedPPG": 23.7,
+        "homeSampleGames": 3,
+        "awaySampleGames": 3,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_04_DET_CAR",
@@ -898,7 +1646,19 @@
       "homeWin": 0.4393,
       "projectedMargin": -1.7,
       "homeElo": 1449.4,
-      "awayElo": 1546.8
+      "awayElo": 1546.8,
+      "scoringContext": {
+        "projectedHomePoints": 26.0,
+        "projectedAwayPoints": 25.4,
+        "projectedTotal": 51.4,
+        "homeOffensePPG": 25.6,
+        "awayOffensePPG": 26.1,
+        "homeDefenseAllowedPPG": 24.7,
+        "awayDefenseAllowedPPG": 26.4,
+        "homeSampleGames": 3,
+        "awaySampleGames": 3,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_04_ATL_NO",
@@ -912,7 +1672,19 @@
       "homeWin": 0.5394,
       "projectedMargin": 1.1,
       "homeElo": 1450.1,
-      "awayElo": 1477.7
+      "awayElo": 1477.7,
+      "scoringContext": {
+        "projectedHomePoints": 23.5,
+        "projectedAwayPoints": 22.4,
+        "projectedTotal": 45.9,
+        "homeOffensePPG": 24.4,
+        "awayOffensePPG": 20.1,
+        "homeDefenseAllowedPPG": 24.7,
+        "awayDefenseAllowedPPG": 22.6,
+        "homeSampleGames": 3,
+        "awaySampleGames": 3,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_05_TB_DAL",
@@ -926,7 +1698,19 @@
       "homeWin": 0.6325,
       "projectedMargin": 3.8,
       "homeElo": 1490.1,
-      "awayElo": 1450.8
+      "awayElo": 1450.8,
+      "scoringContext": {
+        "projectedHomePoints": 24.9,
+        "projectedAwayPoints": 23.0,
+        "projectedTotal": 47.9,
+        "homeOffensePPG": 26.5,
+        "awayOffensePPG": 20.8,
+        "homeDefenseAllowedPPG": 25.2,
+        "awayDefenseAllowedPPG": 23.2,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_05_PHI_JAX",
@@ -940,7 +1724,19 @@
       "homeWin": 0.5605,
       "projectedMargin": 1.7,
       "homeElo": 1537.2,
-      "awayElo": 1549.9
+      "awayElo": 1549.9,
+      "scoringContext": {
+        "projectedHomePoints": 23.6,
+        "projectedAwayPoints": 19.2,
+        "projectedTotal": 42.8,
+        "homeOffensePPG": 24.2,
+        "awayOffensePPG": 20.6,
+        "homeDefenseAllowedPPG": 17.9,
+        "awayDefenseAllowedPPG": 22.9,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_05_CHI_GB",
@@ -954,7 +1750,19 @@
       "homeWin": 0.5707,
       "projectedMargin": 2.0,
       "homeElo": 1516.7,
-      "awayElo": 1522.3
+      "awayElo": 1522.3,
+      "scoringContext": {
+        "projectedHomePoints": 19.9,
+        "projectedAwayPoints": 24.8,
+        "projectedTotal": 44.7,
+        "homeOffensePPG": 20.4,
+        "awayOffensePPG": 25.2,
+        "homeDefenseAllowedPPG": 24.4,
+        "awayDefenseAllowedPPG": 19.4,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_05_CIN_MIA",
@@ -968,7 +1776,19 @@
       "homeWin": 0.5288,
       "projectedMargin": 0.8,
       "homeElo": 1450.6,
-      "awayElo": 1485.6
+      "awayElo": 1485.6,
+      "scoringContext": {
+        "projectedHomePoints": 19.4,
+        "projectedAwayPoints": 23.6,
+        "projectedTotal": 43.1,
+        "homeOffensePPG": 17.0,
+        "awayOffensePPG": 23.4,
+        "homeDefenseAllowedPPG": 23.9,
+        "awayDefenseAllowedPPG": 21.9,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_05_CLE_NYJ",
@@ -982,7 +1802,19 @@
       "homeWin": 0.4911,
       "projectedMargin": -0.2,
       "homeElo": 1409.8,
-      "awayElo": 1470.9
+      "awayElo": 1470.9,
+      "scoringContext": {
+        "projectedHomePoints": 21.9,
+        "projectedAwayPoints": 21.6,
+        "projectedTotal": 43.5,
+        "homeOffensePPG": 20.8,
+        "awayOffensePPG": 21.4,
+        "homeDefenseAllowedPPG": 21.8,
+        "awayDefenseAllowedPPG": 23.1,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_05_HOU_TEN",
@@ -996,7 +1828,19 @@
       "homeWin": 0.4017,
       "projectedMargin": -2.8,
       "homeElo": 1378.0,
-      "awayElo": 1502.1
+      "awayElo": 1502.1,
+      "scoringContext": {
+        "projectedHomePoints": 21.5,
+        "projectedAwayPoints": 21.7,
+        "projectedTotal": 43.2,
+        "homeOffensePPG": 18.1,
+        "awayOffensePPG": 21.8,
+        "homeDefenseAllowedPPG": 21.6,
+        "awayDefenseAllowedPPG": 24.9,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_05_IND_PIT",
@@ -1010,7 +1854,19 @@
       "homeWin": 0.6215,
       "projectedMargin": 3.4,
       "homeElo": 1516.1,
-      "awayElo": 1485.0
+      "awayElo": 1485.0,
+      "scoringContext": {
+        "projectedHomePoints": 22.6,
+        "projectedAwayPoints": 23.1,
+        "projectedTotal": 45.6,
+        "homeOffensePPG": 20.9,
+        "awayOffensePPG": 24.0,
+        "homeDefenseAllowedPPG": 22.1,
+        "awayDefenseAllowedPPG": 24.2,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_05_LV_NE",
@@ -1024,7 +1880,19 @@
       "homeWin": 0.713,
       "projectedMargin": 6.3,
       "homeElo": 1546.0,
-      "awayElo": 1442.9
+      "awayElo": 1442.9,
+      "scoringContext": {
+        "projectedHomePoints": 20.6,
+        "projectedAwayPoints": 23.2,
+        "projectedTotal": 43.8,
+        "homeOffensePPG": 19.4,
+        "awayOffensePPG": 25.6,
+        "homeDefenseAllowedPPG": 20.9,
+        "awayDefenseAllowedPPG": 21.8,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_05_MIN_NO",
@@ -1038,7 +1906,19 @@
       "homeWin": 0.396,
       "projectedMargin": -2.9,
       "homeElo": 1439.4,
-      "awayElo": 1567.7
+      "awayElo": 1567.7,
+      "scoringContext": {
+        "projectedHomePoints": 21.0,
+        "projectedAwayPoints": 24.6,
+        "projectedTotal": 45.6,
+        "homeOffensePPG": 24.4,
+        "awayOffensePPG": 22.0,
+        "homeDefenseAllowedPPG": 27.2,
+        "awayDefenseAllowedPPG": 17.6,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_05_NYG_WAS",
@@ -1052,7 +1932,19 @@
       "homeWin": 0.6006,
       "projectedMargin": 2.8,
       "homeElo": 1463.3,
-      "awayElo": 1447.4
+      "awayElo": 1447.4,
+      "scoringContext": {
+        "projectedHomePoints": 21.7,
+        "projectedAwayPoints": 24.0,
+        "projectedTotal": 45.7,
+        "homeOffensePPG": 22.2,
+        "awayOffensePPG": 21.5,
+        "homeDefenseAllowedPPG": 26.5,
+        "awayDefenseAllowedPPG": 21.1,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_05_DEN_LAC",
@@ -1066,7 +1958,19 @@
       "homeWin": 0.4725,
       "projectedMargin": -0.8,
       "homeElo": 1484.1,
-      "awayElo": 1558.3
+      "awayElo": 1558.3,
+      "scoringContext": {
+        "projectedHomePoints": 21.3,
+        "projectedAwayPoints": 22.5,
+        "projectedTotal": 43.8,
+        "homeOffensePPG": 19.6,
+        "awayOffensePPG": 20.5,
+        "homeDefenseAllowedPPG": 24.5,
+        "awayDefenseAllowedPPG": 23.0,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_05_DET_ARI",
@@ -1080,7 +1984,19 @@
       "homeWin": 0.4104,
       "projectedMargin": -2.5,
       "homeElo": 1417.6,
-      "awayElo": 1535.6
+      "awayElo": 1535.6,
+      "scoringContext": {
+        "projectedHomePoints": 24.6,
+        "projectedAwayPoints": 26.0,
+        "projectedTotal": 50.6,
+        "homeOffensePPG": 22.1,
+        "awayOffensePPG": 26.1,
+        "homeDefenseAllowedPPG": 25.9,
+        "awayDefenseAllowedPPG": 27.1,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_05_SF_SEA",
@@ -1094,7 +2010,19 @@
       "homeWin": 0.613,
       "projectedMargin": 3.2,
       "homeElo": 1596.4,
-      "awayElo": 1571.5
+      "awayElo": 1571.5,
+      "scoringContext": {
+        "projectedHomePoints": 21.8,
+        "projectedAwayPoints": 23.4,
+        "projectedTotal": 45.2,
+        "homeOffensePPG": 24.4,
+        "awayOffensePPG": 26.5,
+        "homeDefenseAllowedPPG": 20.4,
+        "awayDefenseAllowedPPG": 19.2,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_05_BAL_ATL",
@@ -1108,7 +2036,19 @@
       "homeWin": 0.5105,
       "projectedMargin": 0.3,
       "homeElo": 1488.5,
-      "awayElo": 1536.2
+      "awayElo": 1536.2,
+      "scoringContext": {
+        "projectedHomePoints": 23.2,
+        "projectedAwayPoints": 24.2,
+        "projectedTotal": 47.5,
+        "homeOffensePPG": 23.2,
+        "awayOffensePPG": 25.8,
+        "homeDefenseAllowedPPG": 22.8,
+        "awayDefenseAllowedPPG": 23.2,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_05_BUF_LA",
@@ -1122,7 +2062,19 @@
       "homeWin": 0.5408,
       "projectedMargin": 1.1,
       "homeElo": 1552.7,
-      "awayElo": 1579.3
+      "awayElo": 1579.3,
+      "scoringContext": {
+        "projectedHomePoints": 23.2,
+        "projectedAwayPoints": 24.4,
+        "projectedTotal": 47.6,
+        "homeOffensePPG": 21.9,
+        "awayOffensePPG": 27.1,
+        "homeDefenseAllowedPPG": 21.6,
+        "awayDefenseAllowedPPG": 24.6,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_06_SEA_DEN",
@@ -1136,7 +2088,19 @@
       "homeWin": 0.5242,
       "projectedMargin": 0.7,
       "homeElo": 1558.3,
-      "awayElo": 1596.4
+      "awayElo": 1596.4,
+      "scoringContext": {
+        "projectedHomePoints": 20.4,
+        "projectedAwayPoints": 23.7,
+        "projectedTotal": 44.1,
+        "homeOffensePPG": 20.5,
+        "awayOffensePPG": 24.4,
+        "homeDefenseAllowedPPG": 23.0,
+        "awayDefenseAllowedPPG": 20.4,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_06_HOU_JAX",
@@ -1150,7 +2114,19 @@
       "homeWin": 0.6268,
       "projectedMargin": 3.6,
       "homeElo": 1537.2,
-      "awayElo": 1502.1
+      "awayElo": 1502.1,
+      "scoringContext": {
+        "projectedHomePoints": 24.6,
+        "projectedAwayPoints": 19.8,
+        "projectedTotal": 44.4,
+        "homeOffensePPG": 24.2,
+        "awayOffensePPG": 21.8,
+        "homeDefenseAllowedPPG": 17.9,
+        "awayDefenseAllowedPPG": 24.9,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_06_BAL_CLE",
@@ -1164,7 +2140,19 @@
       "homeWin": 0.4852,
       "projectedMargin": -0.4,
       "homeElo": 1470.9,
-      "awayElo": 1536.2
+      "awayElo": 1536.2,
+      "scoringContext": {
+        "projectedHomePoints": 22.3,
+        "projectedAwayPoints": 24.4,
+        "projectedTotal": 46.8,
+        "homeOffensePPG": 21.4,
+        "awayOffensePPG": 25.8,
+        "homeDefenseAllowedPPG": 23.1,
+        "awayDefenseAllowedPPG": 23.2,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_06_CAR_PHI",
@@ -1178,7 +2166,19 @@
       "homeWin": 0.6965,
       "projectedMargin": 5.8,
       "homeElo": 1549.9,
-      "awayElo": 1460.6
+      "awayElo": 1460.6,
+      "scoringContext": {
+        "projectedHomePoints": 22.8,
+        "projectedAwayPoints": 24.6,
+        "projectedTotal": 47.4,
+        "homeOffensePPG": 20.6,
+        "awayOffensePPG": 26.4,
+        "homeDefenseAllowedPPG": 22.9,
+        "awayDefenseAllowedPPG": 24.9,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_06_CHI_ATL",
@@ -1192,7 +2192,19 @@
       "homeWin": 0.5305,
       "projectedMargin": 0.8,
       "homeElo": 1488.5,
-      "awayElo": 1522.3
+      "awayElo": 1522.3,
+      "scoringContext": {
+        "projectedHomePoints": 21.3,
+        "projectedAwayPoints": 24.0,
+        "projectedTotal": 45.3,
+        "homeOffensePPG": 23.2,
+        "awayOffensePPG": 25.2,
+        "homeDefenseAllowedPPG": 22.8,
+        "awayDefenseAllowedPPG": 19.4,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_06_NO_NYG",
@@ -1206,7 +2218,19 @@
       "homeWin": 0.5897,
       "projectedMargin": 2.5,
       "homeElo": 1447.4,
-      "awayElo": 1439.4
+      "awayElo": 1439.4,
+      "scoringContext": {
+        "projectedHomePoints": 24.4,
+        "projectedAwayPoints": 22.8,
+        "projectedTotal": 47.1,
+        "homeOffensePPG": 21.5,
+        "awayOffensePPG": 24.4,
+        "homeDefenseAllowedPPG": 21.1,
+        "awayDefenseAllowedPPG": 27.2,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_06_NYJ_NE",
@@ -1220,7 +2244,19 @@
       "homeWin": 0.7504,
       "projectedMargin": 7.6,
       "homeElo": 1546.0,
-      "awayElo": 1409.8
+      "awayElo": 1409.8,
+      "scoringContext": {
+        "projectedHomePoints": 20.6,
+        "projectedAwayPoints": 20.8,
+        "projectedTotal": 41.4,
+        "homeOffensePPG": 19.4,
+        "awayOffensePPG": 20.8,
+        "homeDefenseAllowedPPG": 20.9,
+        "awayDefenseAllowedPPG": 21.8,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_06_PIT_TB",
@@ -1234,7 +2270,19 @@
       "homeWin": 0.5033,
       "projectedMargin": 0.1,
       "homeElo": 1463.4,
-      "awayElo": 1516.1
+      "awayElo": 1516.1,
+      "scoringContext": {
+        "projectedHomePoints": 21.6,
+        "projectedAwayPoints": 21.7,
+        "projectedTotal": 43.3,
+        "homeOffensePPG": 21.1,
+        "awayOffensePPG": 20.9,
+        "homeDefenseAllowedPPG": 22.4,
+        "awayDefenseAllowedPPG": 22.1,
+        "homeSampleGames": 5,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_06_TEN_IND",
@@ -1248,7 +2296,19 @@
       "homeWin": 0.7176,
       "projectedMargin": 6.5,
       "homeElo": 1485.0,
-      "awayElo": 1378.0
+      "awayElo": 1378.0,
+      "scoringContext": {
+        "projectedHomePoints": 22.8,
+        "projectedAwayPoints": 21.2,
+        "projectedTotal": 44.0,
+        "homeOffensePPG": 24.0,
+        "awayOffensePPG": 18.1,
+        "homeDefenseAllowedPPG": 24.2,
+        "awayDefenseAllowedPPG": 21.6,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_06_ARI_LA",
@@ -1262,7 +2322,19 @@
       "homeWin": 0.7493,
       "projectedMargin": 7.6,
       "homeElo": 1552.7,
-      "awayElo": 1417.6
+      "awayElo": 1417.6,
+      "scoringContext": {
+        "projectedHomePoints": 23.9,
+        "projectedAwayPoints": 21.9,
+        "projectedTotal": 45.8,
+        "homeOffensePPG": 21.9,
+        "awayOffensePPG": 22.1,
+        "homeDefenseAllowedPPG": 21.6,
+        "awayDefenseAllowedPPG": 25.9,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_06_BUF_LV",
@@ -1276,7 +2348,19 @@
       "homeWin": 0.3849,
       "projectedMargin": -3.3,
       "homeElo": 1442.9,
-      "awayElo": 1579.3
+      "awayElo": 1579.3,
+      "scoringContext": {
+        "projectedHomePoints": 25.1,
+        "projectedAwayPoints": 24.4,
+        "projectedTotal": 49.6,
+        "homeOffensePPG": 25.6,
+        "awayOffensePPG": 27.1,
+        "homeDefenseAllowedPPG": 21.8,
+        "awayDefenseAllowedPPG": 24.6,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_06_LAC_KC",
@@ -1290,7 +2374,19 @@
       "homeWin": 0.6675,
       "projectedMargin": 4.8,
       "homeElo": 1550.2,
-      "awayElo": 1484.1
+      "awayElo": 1484.1,
+      "scoringContext": {
+        "projectedHomePoints": 25.2,
+        "projectedAwayPoints": 20.2,
+        "projectedTotal": 45.5,
+        "homeOffensePPG": 26.0,
+        "awayOffensePPG": 19.6,
+        "homeDefenseAllowedPPG": 20.9,
+        "awayDefenseAllowedPPG": 24.5,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_06_DAL_GB",
@@ -1304,7 +2400,19 @@
       "homeWin": 0.6325,
       "projectedMargin": 3.8,
       "homeElo": 1516.7,
-      "awayElo": 1477.4
+      "awayElo": 1477.4,
+      "scoringContext": {
+        "projectedHomePoints": 22.7,
+        "projectedAwayPoints": 24.9,
+        "projectedTotal": 47.6,
+        "homeOffensePPG": 20.4,
+        "awayOffensePPG": 25.3,
+        "homeDefenseAllowedPPG": 24.4,
+        "awayDefenseAllowedPPG": 25.1,
+        "homeSampleGames": 4,
+        "awaySampleGames": 5,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_06_WAS_SF",
@@ -1318,7 +2426,19 @@
       "homeWin": 0.719,
       "projectedMargin": 6.5,
       "homeElo": 1571.5,
-      "awayElo": 1463.3
+      "awayElo": 1463.3,
+      "scoringContext": {
+        "projectedHomePoints": 26.5,
+        "projectedAwayPoints": 20.8,
+        "projectedTotal": 47.2,
+        "homeOffensePPG": 26.5,
+        "awayOffensePPG": 22.2,
+        "homeDefenseAllowedPPG": 19.2,
+        "awayDefenseAllowedPPG": 26.5,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_07_NE_CHI",
@@ -1332,7 +2452,19 @@
       "homeWin": 0.545,
       "projectedMargin": 1.3,
       "homeElo": 1522.3,
-      "awayElo": 1546.0
+      "awayElo": 1546.0,
+      "scoringContext": {
+        "projectedHomePoints": 23.1,
+        "projectedAwayPoints": 19.4,
+        "projectedTotal": 42.4,
+        "homeOffensePPG": 25.2,
+        "awayOffensePPG": 19.4,
+        "homeDefenseAllowedPPG": 19.4,
+        "awayDefenseAllowedPPG": 20.9,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_07_PIT_NO",
@@ -1346,7 +2478,19 @@
       "homeWin": 0.4687,
       "projectedMargin": -0.9,
       "homeElo": 1439.4,
-      "awayElo": 1516.1
+      "awayElo": 1516.1,
+      "scoringContext": {
+        "projectedHomePoints": 23.2,
+        "projectedAwayPoints": 24.1,
+        "projectedTotal": 47.3,
+        "homeOffensePPG": 24.4,
+        "awayOffensePPG": 20.9,
+        "homeDefenseAllowedPPG": 27.2,
+        "awayDefenseAllowedPPG": 22.1,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_07_CIN_BAL",
@@ -1360,7 +2504,19 @@
       "homeWin": 0.6475,
       "projectedMargin": 4.2,
       "homeElo": 1536.2,
-      "awayElo": 1485.6
+      "awayElo": 1485.6,
+      "scoringContext": {
+        "projectedHomePoints": 23.8,
+        "projectedAwayPoints": 23.3,
+        "projectedTotal": 47.1,
+        "homeOffensePPG": 25.8,
+        "awayOffensePPG": 23.4,
+        "homeDefenseAllowedPPG": 23.2,
+        "awayDefenseAllowedPPG": 21.9,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_07_CLE_TEN",
@@ -1374,7 +2530,19 @@
       "homeWin": 0.4456,
       "projectedMargin": -1.5,
       "homeElo": 1378.0,
-      "awayElo": 1470.9
+      "awayElo": 1470.9,
+      "scoringContext": {
+        "projectedHomePoints": 20.6,
+        "projectedAwayPoints": 21.5,
+        "projectedTotal": 42.1,
+        "homeOffensePPG": 18.1,
+        "awayOffensePPG": 21.4,
+        "homeDefenseAllowedPPG": 21.6,
+        "awayDefenseAllowedPPG": 23.1,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_07_IND_MIN",
@@ -1388,7 +2556,19 @@
       "homeWin": 0.6885,
       "projectedMargin": 5.5,
       "homeElo": 1567.7,
-      "awayElo": 1485.0
+      "awayElo": 1485.0,
+      "scoringContext": {
+        "projectedHomePoints": 23.1,
+        "projectedAwayPoints": 20.8,
+        "projectedTotal": 43.9,
+        "homeOffensePPG": 22.0,
+        "awayOffensePPG": 24.0,
+        "homeDefenseAllowedPPG": 17.6,
+        "awayDefenseAllowedPPG": 24.2,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_07_MIA_NYJ",
@@ -1402,7 +2582,19 @@
       "homeWin": 0.5204,
       "projectedMargin": 0.6,
       "homeElo": 1409.8,
-      "awayElo": 1450.6
+      "awayElo": 1450.6,
+      "scoringContext": {
+        "projectedHomePoints": 22.3,
+        "projectedAwayPoints": 19.4,
+        "projectedTotal": 41.7,
+        "homeOffensePPG": 20.8,
+        "awayOffensePPG": 17.0,
+        "homeDefenseAllowedPPG": 21.8,
+        "awayDefenseAllowedPPG": 23.9,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_07_NYG_HOU",
@@ -1416,7 +2608,19 @@
       "homeWin": 0.6529,
       "projectedMargin": 4.4,
       "homeElo": 1502.1,
-      "awayElo": 1447.4
+      "awayElo": 1447.4,
+      "scoringContext": {
+        "projectedHomePoints": 21.4,
+        "projectedAwayPoints": 23.2,
+        "projectedTotal": 44.6,
+        "homeOffensePPG": 21.8,
+        "awayOffensePPG": 21.5,
+        "homeDefenseAllowedPPG": 24.9,
+        "awayDefenseAllowedPPG": 21.1,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_07_SF_ATL",
@@ -1430,7 +2634,19 @@
       "homeWin": 0.4598,
       "projectedMargin": -1.1,
       "homeElo": 1488.5,
-      "awayElo": 1571.5
+      "awayElo": 1571.5,
+      "scoringContext": {
+        "projectedHomePoints": 21.2,
+        "projectedAwayPoints": 24.6,
+        "projectedTotal": 45.9,
+        "homeOffensePPG": 23.2,
+        "awayOffensePPG": 26.5,
+        "homeDefenseAllowedPPG": 22.8,
+        "awayDefenseAllowedPPG": 19.2,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_07_TB_CAR",
@@ -1444,7 +2660,19 @@
       "homeWin": 0.5745,
       "projectedMargin": 2.1,
       "homeElo": 1460.6,
-      "awayElo": 1463.4
+      "awayElo": 1463.4,
+      "scoringContext": {
+        "projectedHomePoints": 24.4,
+        "projectedAwayPoints": 23.0,
+        "projectedTotal": 47.4,
+        "homeOffensePPG": 26.4,
+        "awayOffensePPG": 21.1,
+        "homeDefenseAllowedPPG": 24.9,
+        "awayDefenseAllowedPPG": 22.4,
+        "homeSampleGames": 4,
+        "awaySampleGames": 5,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_07_DEN_ARI",
@@ -1458,7 +2686,19 @@
       "homeWin": 0.3791,
       "projectedMargin": -3.4,
       "homeElo": 1417.6,
-      "awayElo": 1558.3
+      "awayElo": 1558.3,
+      "scoringContext": {
+        "projectedHomePoints": 22.6,
+        "projectedAwayPoints": 23.2,
+        "projectedTotal": 45.8,
+        "homeOffensePPG": 22.1,
+        "awayOffensePPG": 20.5,
+        "homeDefenseAllowedPPG": 25.9,
+        "awayDefenseAllowedPPG": 23.0,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_07_GB_DET",
@@ -1472,7 +2712,19 @@
       "homeWin": 0.6047,
       "projectedMargin": 3.0,
       "homeElo": 1535.6,
-      "awayElo": 1516.7
+      "awayElo": 1516.7,
+      "scoringContext": {
+        "projectedHomePoints": 25.2,
+        "projectedAwayPoints": 23.8,
+        "projectedTotal": 49.0,
+        "homeOffensePPG": 26.1,
+        "awayOffensePPG": 20.4,
+        "homeDefenseAllowedPPG": 27.1,
+        "awayDefenseAllowedPPG": 24.4,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_07_LA_LV",
@@ -1486,7 +2738,19 @@
       "homeWin": 0.4218,
       "projectedMargin": -2.2,
       "homeElo": 1442.9,
-      "awayElo": 1552.7
+      "awayElo": 1552.7,
+      "scoringContext": {
+        "projectedHomePoints": 23.6,
+        "projectedAwayPoints": 21.8,
+        "projectedTotal": 45.4,
+        "homeOffensePPG": 25.6,
+        "awayOffensePPG": 21.9,
+        "homeDefenseAllowedPPG": 21.8,
+        "awayDefenseAllowedPPG": 21.6,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_07_KC_SEA",
@@ -1500,7 +2764,19 @@
       "homeWin": 0.6417,
       "projectedMargin": 4.0,
       "homeElo": 1596.4,
-      "awayElo": 1550.2
+      "awayElo": 1550.2,
+      "scoringContext": {
+        "projectedHomePoints": 22.6,
+        "projectedAwayPoints": 23.2,
+        "projectedTotal": 45.8,
+        "homeOffensePPG": 24.4,
+        "awayOffensePPG": 26.0,
+        "homeDefenseAllowedPPG": 20.4,
+        "awayDefenseAllowedPPG": 20.9,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_07_DAL_PHI",
@@ -1514,7 +2790,19 @@
       "homeWin": 0.6756,
       "projectedMargin": 5.1,
       "homeElo": 1549.9,
-      "awayElo": 1477.4
+      "awayElo": 1477.4,
+      "scoringContext": {
+        "projectedHomePoints": 22.9,
+        "projectedAwayPoints": 24.1,
+        "projectedTotal": 47.0,
+        "homeOffensePPG": 20.6,
+        "awayOffensePPG": 25.3,
+        "homeDefenseAllowedPPG": 22.9,
+        "awayDefenseAllowedPPG": 25.1,
+        "homeSampleGames": 4,
+        "awaySampleGames": 5,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_08_CAR_GB",
@@ -1528,7 +2816,19 @@
       "homeWin": 0.6547,
       "projectedMargin": 4.4,
       "homeElo": 1516.7,
-      "awayElo": 1460.6
+      "awayElo": 1460.6,
+      "scoringContext": {
+        "projectedHomePoints": 22.6,
+        "projectedAwayPoints": 25.4,
+        "projectedTotal": 48.0,
+        "homeOffensePPG": 20.4,
+        "awayOffensePPG": 26.4,
+        "homeDefenseAllowedPPG": 24.4,
+        "awayDefenseAllowedPPG": 24.9,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_08_ARI_DAL",
@@ -1542,7 +2842,19 @@
       "homeWin": 0.6595,
       "projectedMargin": 4.6,
       "homeElo": 1477.4,
-      "awayElo": 1417.6
+      "awayElo": 1417.6,
+      "scoringContext": {
+        "projectedHomePoints": 25.6,
+        "projectedAwayPoints": 23.6,
+        "projectedTotal": 49.2,
+        "homeOffensePPG": 25.3,
+        "awayOffensePPG": 22.1,
+        "homeDefenseAllowedPPG": 25.1,
+        "awayDefenseAllowedPPG": 25.9,
+        "homeSampleGames": 5,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_08_ATL_TB",
@@ -1556,7 +2868,19 @@
       "homeWin": 0.5429,
       "projectedMargin": 1.2,
       "homeElo": 1463.4,
-      "awayElo": 1488.5
+      "awayElo": 1488.5,
+      "scoringContext": {
+        "projectedHomePoints": 21.9,
+        "projectedAwayPoints": 22.8,
+        "projectedTotal": 44.8,
+        "homeOffensePPG": 21.1,
+        "awayOffensePPG": 23.2,
+        "homeDefenseAllowedPPG": 22.4,
+        "awayDefenseAllowedPPG": 22.8,
+        "homeSampleGames": 5,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_08_BAL_BUF",
@@ -1570,7 +2894,19 @@
       "homeWin": 0.6376,
       "projectedMargin": 3.9,
       "homeElo": 1579.3,
-      "awayElo": 1536.2
+      "awayElo": 1536.2,
+      "scoringContext": {
+        "projectedHomePoints": 25.2,
+        "projectedAwayPoints": 25.2,
+        "projectedTotal": 50.4,
+        "homeOffensePPG": 27.1,
+        "awayOffensePPG": 25.8,
+        "homeDefenseAllowedPPG": 24.6,
+        "awayDefenseAllowedPPG": 23.2,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_08_CLE_PIT",
@@ -1584,7 +2920,19 @@
       "homeWin": 0.6403,
       "projectedMargin": 4.0,
       "homeElo": 1516.1,
-      "awayElo": 1470.9
+      "awayElo": 1470.9,
+      "scoringContext": {
+        "projectedHomePoints": 22.0,
+        "projectedAwayPoints": 21.8,
+        "projectedTotal": 43.8,
+        "homeOffensePPG": 20.9,
+        "awayOffensePPG": 21.4,
+        "homeDefenseAllowedPPG": 22.1,
+        "awayDefenseAllowedPPG": 23.1,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_08_IND_JAX",
@@ -1598,7 +2946,19 @@
       "homeWin": 0.6496,
       "projectedMargin": 4.3,
       "homeElo": 1537.2,
-      "awayElo": 1485.0
+      "awayElo": 1485.0,
+      "scoringContext": {
+        "projectedHomePoints": 24.2,
+        "projectedAwayPoints": 20.9,
+        "projectedTotal": 45.2,
+        "homeOffensePPG": 24.2,
+        "awayOffensePPG": 24.0,
+        "homeDefenseAllowedPPG": 17.9,
+        "awayDefenseAllowedPPG": 24.2,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_08_LV_NYJ",
@@ -1612,7 +2972,19 @@
       "homeWin": 0.5314,
       "projectedMargin": 0.9,
       "homeElo": 1409.8,
-      "awayElo": 1442.9
+      "awayElo": 1442.9,
+      "scoringContext": {
+        "projectedHomePoints": 21.2,
+        "projectedAwayPoints": 23.7,
+        "projectedTotal": 44.9,
+        "homeOffensePPG": 20.8,
+        "awayOffensePPG": 25.6,
+        "homeDefenseAllowedPPG": 21.8,
+        "awayDefenseAllowedPPG": 21.8,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_08_MIN_DET",
@@ -1626,7 +2998,19 @@
       "homeWin": 0.5328,
       "projectedMargin": 0.9,
       "homeElo": 1535.6,
-      "awayElo": 1567.7
+      "awayElo": 1567.7,
+      "scoringContext": {
+        "projectedHomePoints": 21.9,
+        "projectedAwayPoints": 24.6,
+        "projectedTotal": 46.4,
+        "homeOffensePPG": 26.1,
+        "awayOffensePPG": 22.0,
+        "homeDefenseAllowedPPG": 27.1,
+        "awayDefenseAllowedPPG": 17.6,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_08_TEN_CIN",
@@ -1640,7 +3024,19 @@
       "homeWin": 0.7183,
       "projectedMargin": 6.5,
       "homeElo": 1485.6,
-      "awayElo": 1378.0
+      "awayElo": 1378.0,
+      "scoringContext": {
+        "projectedHomePoints": 22.5,
+        "projectedAwayPoints": 20.0,
+        "projectedTotal": 42.5,
+        "homeOffensePPG": 23.4,
+        "awayOffensePPG": 18.1,
+        "homeDefenseAllowedPPG": 21.9,
+        "awayDefenseAllowedPPG": 21.6,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_08_LAC_LA",
@@ -1654,7 +3050,19 @@
       "homeWin": 0.6707,
       "projectedMargin": 4.9,
       "homeElo": 1552.7,
-      "awayElo": 1484.1
+      "awayElo": 1484.1,
+      "scoringContext": {
+        "projectedHomePoints": 23.2,
+        "projectedAwayPoints": 20.6,
+        "projectedTotal": 43.8,
+        "homeOffensePPG": 21.9,
+        "awayOffensePPG": 19.6,
+        "homeDefenseAllowedPPG": 21.6,
+        "awayDefenseAllowedPPG": 24.5,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_08_KC_DEN",
@@ -1668,7 +3076,19 @@
       "homeWin": 0.5898,
       "projectedMargin": 2.5,
       "homeElo": 1558.3,
-      "awayElo": 1550.2
+      "awayElo": 1550.2,
+      "scoringContext": {
+        "projectedHomePoints": 20.7,
+        "projectedAwayPoints": 24.5,
+        "projectedTotal": 45.2,
+        "homeOffensePPG": 20.5,
+        "awayOffensePPG": 26.0,
+        "homeDefenseAllowedPPG": 23.0,
+        "awayDefenseAllowedPPG": 20.9,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_08_NE_MIA",
@@ -1682,7 +3102,19 @@
       "homeWin": 0.4421,
       "projectedMargin": -1.6,
       "homeElo": 1450.6,
-      "awayElo": 1546.0
+      "awayElo": 1546.0,
+      "scoringContext": {
+        "projectedHomePoints": 18.9,
+        "projectedAwayPoints": 21.6,
+        "projectedTotal": 40.6,
+        "homeOffensePPG": 17.0,
+        "awayOffensePPG": 19.4,
+        "homeDefenseAllowedPPG": 23.9,
+        "awayDefenseAllowedPPG": 20.9,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_08_PHI_WAS",
@@ -1696,7 +3128,19 @@
       "homeWin": 0.4546,
       "projectedMargin": -1.3,
       "homeElo": 1463.3,
-      "awayElo": 1549.9
+      "awayElo": 1549.9,
+      "scoringContext": {
+        "projectedHomePoints": 22.6,
+        "projectedAwayPoints": 23.6,
+        "projectedTotal": 46.1,
+        "homeOffensePPG": 22.2,
+        "awayOffensePPG": 20.6,
+        "homeDefenseAllowedPPG": 26.5,
+        "awayDefenseAllowedPPG": 22.9,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_08_CHI_SEA",
@@ -1710,7 +3154,19 @@
       "homeWin": 0.6777,
       "projectedMargin": 5.2,
       "homeElo": 1596.4,
-      "awayElo": 1522.3
+      "awayElo": 1522.3,
+      "scoringContext": {
+        "projectedHomePoints": 21.9,
+        "projectedAwayPoints": 22.8,
+        "projectedTotal": 44.7,
+        "homeOffensePPG": 24.4,
+        "awayOffensePPG": 25.2,
+        "homeDefenseAllowedPPG": 20.4,
+        "awayDefenseAllowedPPG": 19.4,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_09_JAX_BAL",
@@ -1724,7 +3180,19 @@
       "homeWin": 0.5771,
       "projectedMargin": 2.2,
       "homeElo": 1536.2,
-      "awayElo": 1537.2
+      "awayElo": 1537.2,
+      "scoringContext": {
+        "projectedHomePoints": 21.8,
+        "projectedAwayPoints": 23.8,
+        "projectedTotal": 45.6,
+        "homeOffensePPG": 25.8,
+        "awayOffensePPG": 24.2,
+        "homeDefenseAllowedPPG": 23.2,
+        "awayDefenseAllowedPPG": 17.9,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_09_CIN_ATL",
@@ -1738,7 +3206,19 @@
       "homeWin": 0.5826,
       "projectedMargin": 2.3,
       "homeElo": 1488.5,
-      "awayElo": 1485.6
+      "awayElo": 1485.6,
+      "scoringContext": {
+        "projectedHomePoints": 22.6,
+        "projectedAwayPoints": 23.1,
+        "projectedTotal": 45.6,
+        "homeOffensePPG": 23.2,
+        "awayOffensePPG": 23.4,
+        "homeDefenseAllowedPPG": 22.8,
+        "awayDefenseAllowedPPG": 21.9,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_09_CLE_NO",
@@ -1752,7 +3232,19 @@
       "homeWin": 0.5337,
       "projectedMargin": 0.9,
       "homeElo": 1439.4,
-      "awayElo": 1470.9
+      "awayElo": 1470.9,
+      "scoringContext": {
+        "projectedHomePoints": 23.8,
+        "projectedAwayPoints": 24.3,
+        "projectedTotal": 48.1,
+        "homeOffensePPG": 24.4,
+        "awayOffensePPG": 21.4,
+        "homeDefenseAllowedPPG": 27.2,
+        "awayDefenseAllowedPPG": 23.1,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_09_DAL_IND",
@@ -1766,7 +3258,19 @@
       "homeWin": 0.589,
       "projectedMargin": 2.5,
       "homeElo": 1485.0,
-      "awayElo": 1477.4
+      "awayElo": 1477.4,
+      "scoringContext": {
+        "projectedHomePoints": 24.6,
+        "projectedAwayPoints": 24.8,
+        "projectedTotal": 49.3,
+        "homeOffensePPG": 24.0,
+        "awayOffensePPG": 25.3,
+        "homeDefenseAllowedPPG": 24.2,
+        "awayDefenseAllowedPPG": 25.1,
+        "homeSampleGames": 4,
+        "awaySampleGames": 5,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_09_DEN_CAR",
@@ -1780,7 +3284,19 @@
       "homeWin": 0.4389,
       "projectedMargin": -1.7,
       "homeElo": 1460.6,
-      "awayElo": 1558.3
+      "awayElo": 1558.3,
+      "scoringContext": {
+        "projectedHomePoints": 24.7,
+        "projectedAwayPoints": 22.7,
+        "projectedTotal": 47.4,
+        "homeOffensePPG": 26.4,
+        "awayOffensePPG": 20.5,
+        "homeDefenseAllowedPPG": 24.9,
+        "awayDefenseAllowedPPG": 23.0,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_09_DET_MIA",
@@ -1794,7 +3310,19 @@
       "homeWin": 0.457,
       "projectedMargin": -1.2,
       "homeElo": 1450.6,
-      "awayElo": 1535.6
+      "awayElo": 1535.6,
+      "scoringContext": {
+        "projectedHomePoints": 22.1,
+        "projectedAwayPoints": 25.0,
+        "projectedTotal": 47.1,
+        "homeOffensePPG": 17.0,
+        "awayOffensePPG": 26.1,
+        "homeDefenseAllowedPPG": 23.9,
+        "awayDefenseAllowedPPG": 27.1,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_09_LA_WAS",
@@ -1808,7 +3336,19 @@
       "homeWin": 0.4506,
       "projectedMargin": -1.4,
       "homeElo": 1463.3,
-      "awayElo": 1552.7
+      "awayElo": 1552.7,
+      "scoringContext": {
+        "projectedHomePoints": 21.9,
+        "projectedAwayPoints": 24.2,
+        "projectedTotal": 46.1,
+        "homeOffensePPG": 22.2,
+        "awayOffensePPG": 21.9,
+        "homeDefenseAllowedPPG": 26.5,
+        "awayDefenseAllowedPPG": 21.6,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_09_NYG_PHI",
@@ -1822,7 +3362,19 @@
       "homeWin": 0.7123,
       "projectedMargin": 6.3,
       "homeElo": 1549.9,
-      "awayElo": 1447.4
+      "awayElo": 1447.4,
+      "scoringContext": {
+        "projectedHomePoints": 20.9,
+        "projectedAwayPoints": 22.2,
+        "projectedTotal": 43.1,
+        "homeOffensePPG": 20.6,
+        "awayOffensePPG": 21.5,
+        "homeDefenseAllowedPPG": 22.9,
+        "awayDefenseAllowedPPG": 21.1,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_09_NYJ_KC",
@@ -1836,7 +3388,19 @@
       "homeWin": 0.7549,
       "projectedMargin": 7.8,
       "homeElo": 1550.2,
-      "awayElo": 1409.8
+      "awayElo": 1409.8,
+      "scoringContext": {
+        "projectedHomePoints": 23.9,
+        "projectedAwayPoints": 20.8,
+        "projectedTotal": 44.7,
+        "homeOffensePPG": 26.0,
+        "awayOffensePPG": 20.8,
+        "homeDefenseAllowedPPG": 20.9,
+        "awayDefenseAllowedPPG": 21.8,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_09_HOU_LAC",
@@ -1850,7 +3414,19 @@
       "homeWin": 0.553,
       "projectedMargin": 1.5,
       "homeElo": 1484.1,
-      "awayElo": 1502.1
+      "awayElo": 1502.1,
+      "scoringContext": {
+        "projectedHomePoints": 22.2,
+        "projectedAwayPoints": 23.1,
+        "projectedTotal": 45.4,
+        "homeOffensePPG": 19.6,
+        "awayOffensePPG": 21.8,
+        "homeDefenseAllowedPPG": 24.5,
+        "awayDefenseAllowedPPG": 24.9,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_09_LV_SF",
@@ -1864,7 +3440,19 @@
       "homeWin": 0.7421,
       "projectedMargin": 7.3,
       "homeElo": 1571.5,
-      "awayElo": 1442.9
+      "awayElo": 1442.9,
+      "scoringContext": {
+        "projectedHomePoints": 24.1,
+        "projectedAwayPoints": 22.4,
+        "projectedTotal": 46.6,
+        "homeOffensePPG": 26.5,
+        "awayOffensePPG": 25.6,
+        "homeDefenseAllowedPPG": 19.2,
+        "awayDefenseAllowedPPG": 21.8,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_09_ARI_SEA",
@@ -1878,7 +3466,19 @@
       "homeWin": 0.7935,
       "projectedMargin": 9.4,
       "homeElo": 1596.4,
-      "awayElo": 1417.6
+      "awayElo": 1417.6,
+      "scoringContext": {
+        "projectedHomePoints": 25.1,
+        "projectedAwayPoints": 21.2,
+        "projectedTotal": 46.4,
+        "homeOffensePPG": 24.4,
+        "awayOffensePPG": 22.1,
+        "homeDefenseAllowedPPG": 20.4,
+        "awayDefenseAllowedPPG": 25.9,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_09_GB_NE",
@@ -1892,7 +3492,19 @@
       "homeWin": 0.6189,
       "projectedMargin": 3.4,
       "homeElo": 1546.0,
-      "awayElo": 1516.7
+      "awayElo": 1516.7,
+      "scoringContext": {
+        "projectedHomePoints": 21.9,
+        "projectedAwayPoints": 20.6,
+        "projectedTotal": 42.5,
+        "homeOffensePPG": 19.4,
+        "awayOffensePPG": 20.4,
+        "homeDefenseAllowedPPG": 20.9,
+        "awayDefenseAllowedPPG": 24.4,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_09_TB_CHI",
@@ -1906,7 +3518,19 @@
       "homeWin": 0.6583,
       "projectedMargin": 4.6,
       "homeElo": 1522.3,
-      "awayElo": 1463.4
+      "awayElo": 1463.4,
+      "scoringContext": {
+        "projectedHomePoints": 23.8,
+        "projectedAwayPoints": 20.2,
+        "projectedTotal": 44.1,
+        "homeOffensePPG": 25.2,
+        "awayOffensePPG": 21.1,
+        "homeDefenseAllowedPPG": 19.4,
+        "awayDefenseAllowedPPG": 22.4,
+        "homeSampleGames": 4,
+        "awaySampleGames": 5,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_09_BUF_MIN",
@@ -1920,7 +3544,19 @@
       "homeWin": 0.5621,
       "projectedMargin": 1.7,
       "homeElo": 1567.7,
-      "awayElo": 1579.3
+      "awayElo": 1579.3,
+      "scoringContext": {
+        "projectedHomePoints": 23.3,
+        "projectedAwayPoints": 22.4,
+        "projectedTotal": 45.7,
+        "homeOffensePPG": 22.0,
+        "awayOffensePPG": 27.1,
+        "homeDefenseAllowedPPG": 17.6,
+        "awayDefenseAllowedPPG": 24.6,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_10_WAS_NYG",
@@ -1934,7 +3570,19 @@
       "homeWin": 0.556,
       "projectedMargin": 1.6,
       "homeElo": 1447.4,
-      "awayElo": 1463.3
+      "awayElo": 1463.3,
+      "scoringContext": {
+        "projectedHomePoints": 24.0,
+        "projectedAwayPoints": 21.7,
+        "projectedTotal": 45.7,
+        "homeOffensePPG": 21.5,
+        "awayOffensePPG": 22.2,
+        "homeDefenseAllowedPPG": 21.1,
+        "awayDefenseAllowedPPG": 26.5,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_10_NE_DET",
@@ -1948,7 +3596,19 @@
       "homeWin": 0.5638,
       "projectedMargin": 1.8,
       "homeElo": 1535.6,
-      "awayElo": 1546.0
+      "awayElo": 1546.0,
+      "scoringContext": {
+        "projectedHomePoints": 23.5,
+        "projectedAwayPoints": 23.2,
+        "projectedTotal": 46.8,
+        "homeOffensePPG": 26.1,
+        "awayOffensePPG": 19.4,
+        "homeDefenseAllowedPPG": 27.1,
+        "awayDefenseAllowedPPG": 20.9,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_10_BUF_NYJ",
@@ -1962,7 +3622,19 @@
       "homeWin": 0.3408,
       "projectedMargin": -4.6,
       "homeElo": 1409.8,
-      "awayElo": 1579.3
+      "awayElo": 1579.3,
+      "scoringContext": {
+        "projectedHomePoints": 22.7,
+        "projectedAwayPoints": 24.4,
+        "projectedTotal": 47.1,
+        "homeOffensePPG": 20.8,
+        "awayOffensePPG": 27.1,
+        "homeDefenseAllowedPPG": 21.8,
+        "awayDefenseAllowedPPG": 24.6,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_10_CAR_NO",
@@ -1976,7 +3648,19 @@
       "homeWin": 0.5485,
       "projectedMargin": 1.4,
       "homeElo": 1439.4,
-      "awayElo": 1460.6
+      "awayElo": 1460.6,
+      "scoringContext": {
+        "projectedHomePoints": 24.6,
+        "projectedAwayPoints": 26.8,
+        "projectedTotal": 51.4,
+        "homeOffensePPG": 24.4,
+        "awayOffensePPG": 26.4,
+        "homeDefenseAllowedPPG": 27.2,
+        "awayDefenseAllowedPPG": 24.9,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_10_HOU_CLE",
@@ -1990,7 +3674,19 @@
       "homeWin": 0.5342,
       "projectedMargin": 1.0,
       "homeElo": 1470.9,
-      "awayElo": 1502.1
+      "awayElo": 1502.1,
+      "scoringContext": {
+        "projectedHomePoints": 23.1,
+        "projectedAwayPoints": 22.4,
+        "projectedTotal": 45.6,
+        "homeOffensePPG": 21.4,
+        "awayOffensePPG": 21.8,
+        "homeDefenseAllowedPPG": 23.1,
+        "awayDefenseAllowedPPG": 24.9,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_10_JAX_TEN",
@@ -2004,7 +3700,19 @@
       "homeWin": 0.3544,
       "projectedMargin": -4.2,
       "homeElo": 1378.0,
-      "awayElo": 1537.2
+      "awayElo": 1537.2,
+      "scoringContext": {
+        "projectedHomePoints": 18.0,
+        "projectedAwayPoints": 22.9,
+        "projectedTotal": 40.9,
+        "homeOffensePPG": 18.1,
+        "awayOffensePPG": 24.2,
+        "homeDefenseAllowedPPG": 21.6,
+        "awayDefenseAllowedPPG": 17.9,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_10_KC_ATL",
@@ -2018,7 +3726,19 @@
       "homeWin": 0.4904,
       "projectedMargin": -0.3,
       "homeElo": 1488.5,
-      "awayElo": 1550.2
+      "awayElo": 1550.2,
+      "scoringContext": {
+        "projectedHomePoints": 22.1,
+        "projectedAwayPoints": 24.4,
+        "projectedTotal": 46.4,
+        "homeOffensePPG": 23.2,
+        "awayOffensePPG": 26.0,
+        "homeDefenseAllowedPPG": 22.8,
+        "awayDefenseAllowedPPG": 20.9,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_10_MIA_IND",
@@ -2032,7 +3752,19 @@
       "homeWin": 0.6259,
       "projectedMargin": 3.6,
       "homeElo": 1485.0,
-      "awayElo": 1450.6
+      "awayElo": 1450.6,
+      "scoringContext": {
+        "projectedHomePoints": 23.9,
+        "projectedAwayPoints": 20.6,
+        "projectedTotal": 44.6,
+        "homeOffensePPG": 24.0,
+        "awayOffensePPG": 17.0,
+        "homeDefenseAllowedPPG": 24.2,
+        "awayDefenseAllowedPPG": 23.9,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_10_MIN_GB",
@@ -2046,7 +3778,19 @@
       "homeWin": 0.5058,
       "projectedMargin": 0.2,
       "homeElo": 1516.7,
-      "awayElo": 1567.7
+      "awayElo": 1567.7,
+      "scoringContext": {
+        "projectedHomePoints": 19.0,
+        "projectedAwayPoints": 23.2,
+        "projectedTotal": 42.2,
+        "homeOffensePPG": 20.4,
+        "awayOffensePPG": 22.0,
+        "homeDefenseAllowedPPG": 24.4,
+        "awayDefenseAllowedPPG": 17.6,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_10_LA_ARI",
@@ -2060,7 +3804,19 @@
       "homeWin": 0.3866,
       "projectedMargin": -3.2,
       "homeElo": 1417.6,
-      "awayElo": 1552.7
+      "awayElo": 1552.7,
+      "scoringContext": {
+        "projectedHomePoints": 21.9,
+        "projectedAwayPoints": 23.9,
+        "projectedTotal": 45.8,
+        "homeOffensePPG": 22.1,
+        "awayOffensePPG": 21.9,
+        "homeDefenseAllowedPPG": 25.9,
+        "awayDefenseAllowedPPG": 21.6,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_10_SEA_LV",
@@ -2074,7 +3830,19 @@
       "homeWin": 0.3619,
       "projectedMargin": -3.9,
       "homeElo": 1442.9,
-      "awayElo": 1596.4
+      "awayElo": 1596.4,
+      "scoringContext": {
+        "projectedHomePoints": 23.0,
+        "projectedAwayPoints": 23.1,
+        "projectedTotal": 46.1,
+        "homeOffensePPG": 25.6,
+        "awayOffensePPG": 24.4,
+        "homeDefenseAllowedPPG": 21.8,
+        "awayDefenseAllowedPPG": 20.4,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_10_SF_DAL",
@@ -2088,7 +3856,19 @@
       "homeWin": 0.444,
       "projectedMargin": -1.6,
       "homeElo": 1477.4,
-      "awayElo": 1571.5
+      "awayElo": 1571.5,
+      "scoringContext": {
+        "projectedHomePoints": 22.3,
+        "projectedAwayPoints": 25.8,
+        "projectedTotal": 48.1,
+        "homeOffensePPG": 25.3,
+        "awayOffensePPG": 26.5,
+        "homeDefenseAllowedPPG": 25.1,
+        "awayDefenseAllowedPPG": 19.2,
+        "homeSampleGames": 5,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_10_PIT_CIN",
@@ -2102,7 +3882,19 @@
       "homeWin": 0.5351,
       "projectedMargin": 1.0,
       "homeElo": 1485.6,
-      "awayElo": 1516.1
+      "awayElo": 1516.1,
+      "scoringContext": {
+        "projectedHomePoints": 22.8,
+        "projectedAwayPoints": 21.4,
+        "projectedTotal": 44.1,
+        "homeOffensePPG": 23.4,
+        "awayOffensePPG": 20.9,
+        "homeDefenseAllowedPPG": 21.9,
+        "awayDefenseAllowedPPG": 22.1,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_10_LAC_BAL",
@@ -2116,7 +3908,19 @@
       "homeWin": 0.6494,
       "projectedMargin": 4.3,
       "homeElo": 1536.2,
-      "awayElo": 1484.1
+      "awayElo": 1484.1,
+      "scoringContext": {
+        "projectedHomePoints": 25.1,
+        "projectedAwayPoints": 21.4,
+        "projectedTotal": 46.6,
+        "homeOffensePPG": 25.8,
+        "awayOffensePPG": 19.6,
+        "homeDefenseAllowedPPG": 23.2,
+        "awayDefenseAllowedPPG": 24.5,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_11_IND_HOU",
@@ -2130,7 +3934,19 @@
       "homeWin": 0.6024,
       "projectedMargin": 2.9,
       "homeElo": 1502.1,
-      "awayElo": 1485.0
+      "awayElo": 1485.0,
+      "scoringContext": {
+        "projectedHomePoints": 23.0,
+        "projectedAwayPoints": 24.4,
+        "projectedTotal": 47.4,
+        "homeOffensePPG": 21.8,
+        "awayOffensePPG": 24.0,
+        "homeDefenseAllowedPPG": 24.9,
+        "awayDefenseAllowedPPG": 24.2,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_11_ARI_KC",
@@ -2144,7 +3960,19 @@
       "homeWin": 0.7465,
       "projectedMargin": 7.5,
       "homeElo": 1550.2,
-      "awayElo": 1417.6
+      "awayElo": 1417.6,
+      "scoringContext": {
+        "projectedHomePoints": 25.9,
+        "projectedAwayPoints": 21.5,
+        "projectedTotal": 47.4,
+        "homeOffensePPG": 26.0,
+        "awayOffensePPG": 22.1,
+        "homeDefenseAllowedPPG": 20.9,
+        "awayDefenseAllowedPPG": 25.9,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_11_BAL_CAR",
@@ -2158,7 +3986,19 @@
       "homeWin": 0.4704,
       "projectedMargin": -0.8,
       "homeElo": 1460.6,
-      "awayElo": 1536.2
+      "awayElo": 1536.2,
+      "scoringContext": {
+        "projectedHomePoints": 24.8,
+        "projectedAwayPoints": 25.3,
+        "projectedTotal": 50.1,
+        "homeOffensePPG": 26.4,
+        "awayOffensePPG": 25.8,
+        "homeDefenseAllowedPPG": 24.9,
+        "awayDefenseAllowedPPG": 23.2,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_11_JAX_NYG",
@@ -2172,7 +4012,19 @@
       "homeWin": 0.4501,
       "projectedMargin": -1.4,
       "homeElo": 1447.4,
-      "awayElo": 1537.2
+      "awayElo": 1537.2,
+      "scoringContext": {
+        "projectedHomePoints": 19.7,
+        "projectedAwayPoints": 22.7,
+        "projectedTotal": 42.4,
+        "homeOffensePPG": 21.5,
+        "awayOffensePPG": 24.2,
+        "homeDefenseAllowedPPG": 21.1,
+        "awayDefenseAllowedPPG": 17.9,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_11_MIA_BUF",
@@ -2186,7 +4038,19 @@
       "homeWin": 0.7423,
       "projectedMargin": 7.4,
       "homeElo": 1579.3,
-      "awayElo": 1450.6
+      "awayElo": 1450.6,
+      "scoringContext": {
+        "projectedHomePoints": 25.5,
+        "projectedAwayPoints": 20.8,
+        "projectedTotal": 46.3,
+        "homeOffensePPG": 27.1,
+        "awayOffensePPG": 17.0,
+        "homeDefenseAllowedPPG": 24.6,
+        "awayDefenseAllowedPPG": 23.9,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_11_NO_CHI",
@@ -2200,7 +4064,19 @@
       "homeWin": 0.6887,
       "projectedMargin": 5.5,
       "homeElo": 1522.3,
-      "awayElo": 1439.4
+      "awayElo": 1439.4,
+      "scoringContext": {
+        "projectedHomePoints": 26.2,
+        "projectedAwayPoints": 21.9,
+        "projectedTotal": 48.1,
+        "homeOffensePPG": 25.2,
+        "awayOffensePPG": 24.4,
+        "homeDefenseAllowedPPG": 19.4,
+        "awayDefenseAllowedPPG": 27.2,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_11_TB_DET",
@@ -2214,7 +4090,19 @@
       "homeWin": 0.6752,
       "projectedMargin": 5.1,
       "homeElo": 1535.6,
-      "awayElo": 1463.4
+      "awayElo": 1463.4,
+      "scoringContext": {
+        "projectedHomePoints": 24.3,
+        "projectedAwayPoints": 24.1,
+        "projectedTotal": 48.4,
+        "homeOffensePPG": 26.1,
+        "awayOffensePPG": 21.1,
+        "homeDefenseAllowedPPG": 27.1,
+        "awayDefenseAllowedPPG": 22.4,
+        "homeSampleGames": 4,
+        "awaySampleGames": 5,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_11_TEN_DAL",
@@ -2228,7 +4116,19 @@
       "homeWin": 0.7087,
       "projectedMargin": 6.2,
       "homeElo": 1477.4,
-      "awayElo": 1378.0
+      "awayElo": 1378.0,
+      "scoringContext": {
+        "projectedHomePoints": 23.5,
+        "projectedAwayPoints": 21.6,
+        "projectedTotal": 45.1,
+        "homeOffensePPG": 25.3,
+        "awayOffensePPG": 18.1,
+        "homeDefenseAllowedPPG": 25.1,
+        "awayDefenseAllowedPPG": 21.6,
+        "homeSampleGames": 5,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_11_NYJ_LAC",
@@ -2242,7 +4142,19 @@
       "homeWin": 0.678,
       "projectedMargin": 5.2,
       "homeElo": 1484.1,
-      "awayElo": 1409.8
+      "awayElo": 1409.8,
+      "scoringContext": {
+        "projectedHomePoints": 20.7,
+        "projectedAwayPoints": 22.6,
+        "projectedTotal": 43.3,
+        "homeOffensePPG": 19.6,
+        "awayOffensePPG": 20.8,
+        "homeDefenseAllowedPPG": 24.5,
+        "awayDefenseAllowedPPG": 21.8,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_11_LV_DEN",
@@ -2256,7 +4168,19 @@
       "homeWin": 0.7272,
       "projectedMargin": 6.8,
       "homeElo": 1558.3,
-      "awayElo": 1442.9
+      "awayElo": 1442.9,
+      "scoringContext": {
+        "projectedHomePoints": 21.1,
+        "projectedAwayPoints": 24.3,
+        "projectedTotal": 45.4,
+        "homeOffensePPG": 20.5,
+        "awayOffensePPG": 25.6,
+        "homeDefenseAllowedPPG": 23.0,
+        "awayDefenseAllowedPPG": 21.8,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_11_PIT_PHI",
@@ -2270,7 +4194,19 @@
       "homeWin": 0.6251,
       "projectedMargin": 3.6,
       "homeElo": 1549.9,
-      "awayElo": 1516.1
+      "awayElo": 1516.1,
+      "scoringContext": {
+        "projectedHomePoints": 21.4,
+        "projectedAwayPoints": 21.9,
+        "projectedTotal": 43.2,
+        "homeOffensePPG": 20.6,
+        "awayOffensePPG": 20.9,
+        "homeDefenseAllowedPPG": 22.9,
+        "awayDefenseAllowedPPG": 22.1,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_11_MIN_SF",
@@ -2284,7 +4220,19 @@
       "homeWin": 0.5838,
       "projectedMargin": 2.4,
       "homeElo": 1571.5,
-      "awayElo": 1567.7
+      "awayElo": 1567.7,
+      "scoringContext": {
+        "projectedHomePoints": 22.1,
+        "projectedAwayPoints": 20.6,
+        "projectedTotal": 42.7,
+        "homeOffensePPG": 26.5,
+        "awayOffensePPG": 22.0,
+        "homeDefenseAllowedPPG": 19.2,
+        "awayDefenseAllowedPPG": 17.6,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_11_CIN_WAS",
@@ -2298,7 +4246,19 @@
       "homeWin": 0.5469,
       "projectedMargin": 1.3,
       "homeElo": 1463.3,
-      "awayElo": 1485.6
+      "awayElo": 1485.6,
+      "scoringContext": {
+        "projectedHomePoints": 22.1,
+        "projectedAwayPoints": 24.9,
+        "projectedTotal": 47.0,
+        "homeOffensePPG": 22.2,
+        "awayOffensePPG": 23.4,
+        "homeDefenseAllowedPPG": 26.5,
+        "awayDefenseAllowedPPG": 21.9,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_12_GB_LA",
@@ -2312,7 +4272,19 @@
       "homeWin": 0.6281,
       "projectedMargin": 3.6,
       "homeElo": 1552.7,
-      "awayElo": 1516.7
+      "awayElo": 1516.7,
+      "scoringContext": {
+        "projectedHomePoints": 23.1,
+        "projectedAwayPoints": 21.0,
+        "projectedTotal": 44.1,
+        "homeOffensePPG": 21.9,
+        "awayOffensePPG": 20.4,
+        "homeDefenseAllowedPPG": 21.6,
+        "awayDefenseAllowedPPG": 24.4,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_12_CHI_DET",
@@ -2326,7 +4298,19 @@
       "homeWin": 0.597,
       "projectedMargin": 2.7,
       "homeElo": 1535.6,
-      "awayElo": 1522.3
+      "awayElo": 1522.3,
+      "scoringContext": {
+        "projectedHomePoints": 22.8,
+        "projectedAwayPoints": 26.2,
+        "projectedTotal": 48.9,
+        "homeOffensePPG": 26.1,
+        "awayOffensePPG": 25.2,
+        "homeDefenseAllowedPPG": 27.1,
+        "awayDefenseAllowedPPG": 19.4,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_12_PHI_DAL",
@@ -2340,7 +4324,19 @@
       "homeWin": 0.4749,
       "projectedMargin": -0.7,
       "homeElo": 1477.4,
-      "awayElo": 1549.9
+      "awayElo": 1549.9,
+      "scoringContext": {
+        "projectedHomePoints": 24.1,
+        "projectedAwayPoints": 22.9,
+        "projectedTotal": 47.0,
+        "homeOffensePPG": 25.3,
+        "awayOffensePPG": 20.6,
+        "homeDefenseAllowedPPG": 25.1,
+        "awayDefenseAllowedPPG": 22.9,
+        "homeSampleGames": 5,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_12_KC_BUF",
@@ -2354,7 +4350,19 @@
       "homeWin": 0.6188,
       "projectedMargin": 3.4,
       "homeElo": 1579.3,
-      "awayElo": 1550.2
+      "awayElo": 1550.2,
+      "scoringContext": {
+        "projectedHomePoints": 24.0,
+        "projectedAwayPoints": 25.3,
+        "projectedTotal": 49.3,
+        "homeOffensePPG": 27.1,
+        "awayOffensePPG": 26.0,
+        "homeDefenseAllowedPPG": 24.6,
+        "awayDefenseAllowedPPG": 20.9,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_12_DEN_PIT",
@@ -2368,7 +4376,19 @@
       "homeWin": 0.5185,
       "projectedMargin": 0.5,
       "homeElo": 1516.1,
-      "awayElo": 1558.3
+      "awayElo": 1558.3,
+      "scoringContext": {
+        "projectedHomePoints": 21.9,
+        "projectedAwayPoints": 21.3,
+        "projectedTotal": 43.2,
+        "homeOffensePPG": 20.9,
+        "awayOffensePPG": 20.5,
+        "homeDefenseAllowedPPG": 22.1,
+        "awayDefenseAllowedPPG": 23.0,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_12_ATL_MIN",
@@ -2382,7 +4402,19 @@
       "homeWin": 0.6841,
       "projectedMargin": 5.4,
       "homeElo": 1567.7,
-      "awayElo": 1488.5
+      "awayElo": 1488.5,
+      "scoringContext": {
+        "projectedHomePoints": 22.4,
+        "projectedAwayPoints": 20.4,
+        "projectedTotal": 42.8,
+        "homeOffensePPG": 22.0,
+        "awayOffensePPG": 23.2,
+        "homeDefenseAllowedPPG": 17.6,
+        "awayDefenseAllowedPPG": 22.8,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_12_BAL_HOU",
@@ -2396,7 +4428,19 @@
       "homeWin": 0.5301,
       "projectedMargin": 0.8,
       "homeElo": 1502.1,
-      "awayElo": 1536.2
+      "awayElo": 1536.2,
+      "scoringContext": {
+        "projectedHomePoints": 22.5,
+        "projectedAwayPoints": 25.3,
+        "projectedTotal": 47.8,
+        "homeOffensePPG": 21.8,
+        "awayOffensePPG": 25.8,
+        "homeDefenseAllowedPPG": 24.9,
+        "awayDefenseAllowedPPG": 23.2,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_12_LV_CLE",
@@ -2410,7 +4454,19 @@
       "homeWin": 0.6172,
       "projectedMargin": 3.3,
       "homeElo": 1470.9,
-      "awayElo": 1442.9
+      "awayElo": 1442.9,
+      "scoringContext": {
+        "projectedHomePoints": 21.6,
+        "projectedAwayPoints": 24.4,
+        "projectedTotal": 45.9,
+        "homeOffensePPG": 21.4,
+        "awayOffensePPG": 25.6,
+        "homeDefenseAllowedPPG": 23.1,
+        "awayDefenseAllowedPPG": 21.8,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_12_NO_CIN",
@@ -2424,7 +4480,19 @@
       "homeWin": 0.6417,
       "projectedMargin": 4.0,
       "homeElo": 1485.6,
-      "awayElo": 1439.4
+      "awayElo": 1439.4,
+      "scoringContext": {
+        "projectedHomePoints": 25.3,
+        "projectedAwayPoints": 23.1,
+        "projectedTotal": 48.4,
+        "homeOffensePPG": 23.4,
+        "awayOffensePPG": 24.4,
+        "homeDefenseAllowedPPG": 21.9,
+        "awayDefenseAllowedPPG": 27.2,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_12_NYG_IND",
@@ -2438,7 +4506,19 @@
       "homeWin": 0.6302,
       "projectedMargin": 3.7,
       "homeElo": 1485.0,
-      "awayElo": 1447.4
+      "awayElo": 1447.4,
+      "scoringContext": {
+        "projectedHomePoints": 22.6,
+        "projectedAwayPoints": 22.9,
+        "projectedTotal": 45.4,
+        "homeOffensePPG": 24.0,
+        "awayOffensePPG": 21.5,
+        "homeDefenseAllowedPPG": 24.2,
+        "awayDefenseAllowedPPG": 21.1,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_12_NYJ_MIA",
@@ -2452,7 +4532,19 @@
       "homeWin": 0.6345,
       "projectedMargin": 3.8,
       "homeElo": 1450.6,
-      "awayElo": 1409.8
+      "awayElo": 1409.8,
+      "scoringContext": {
+        "projectedHomePoints": 19.4,
+        "projectedAwayPoints": 22.3,
+        "projectedTotal": 41.7,
+        "homeOffensePPG": 17.0,
+        "awayOffensePPG": 20.8,
+        "homeDefenseAllowedPPG": 23.9,
+        "awayDefenseAllowedPPG": 21.8,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_12_TEN_JAX",
@@ -2466,7 +4558,19 @@
       "homeWin": 0.7744,
       "projectedMargin": 8.6,
       "homeElo": 1537.2,
-      "awayElo": 1378.0
+      "awayElo": 1378.0,
+      "scoringContext": {
+        "projectedHomePoints": 22.9,
+        "projectedAwayPoints": 18.0,
+        "projectedTotal": 40.9,
+        "homeOffensePPG": 24.2,
+        "awayOffensePPG": 18.1,
+        "homeDefenseAllowedPPG": 17.9,
+        "awayDefenseAllowedPPG": 21.6,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_12_SEA_SF",
@@ -2480,7 +4584,19 @@
       "homeWin": 0.5432,
       "projectedMargin": 1.2,
       "homeElo": 1571.5,
-      "awayElo": 1596.4
+      "awayElo": 1596.4,
+      "scoringContext": {
+        "projectedHomePoints": 23.4,
+        "projectedAwayPoints": 21.8,
+        "projectedTotal": 45.2,
+        "homeOffensePPG": 26.5,
+        "awayOffensePPG": 24.4,
+        "homeDefenseAllowedPPG": 19.2,
+        "awayDefenseAllowedPPG": 20.4,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_12_WAS_ARI",
@@ -2494,7 +4610,19 @@
       "homeWin": 0.5134,
       "projectedMargin": 0.4,
       "homeElo": 1417.6,
-      "awayElo": 1463.3
+      "awayElo": 1463.3,
+      "scoringContext": {
+        "projectedHomePoints": 24.3,
+        "projectedAwayPoints": 24.1,
+        "projectedTotal": 48.4,
+        "homeOffensePPG": 22.1,
+        "awayOffensePPG": 22.2,
+        "homeDefenseAllowedPPG": 25.9,
+        "awayDefenseAllowedPPG": 26.5,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_12_NE_LAC",
@@ -2508,7 +4636,19 @@
       "homeWin": 0.4901,
       "projectedMargin": -0.3,
       "homeElo": 1484.1,
-      "awayElo": 1546.0
+      "awayElo": 1546.0,
+      "scoringContext": {
+        "projectedHomePoints": 20.2,
+        "projectedAwayPoints": 21.9,
+        "projectedTotal": 42.2,
+        "homeOffensePPG": 19.6,
+        "awayOffensePPG": 19.4,
+        "homeDefenseAllowedPPG": 24.5,
+        "awayDefenseAllowedPPG": 20.9,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_12_CAR_TB",
@@ -2522,7 +4662,19 @@
       "homeWin": 0.5825,
       "projectedMargin": 2.3,
       "homeElo": 1463.4,
-      "awayElo": 1460.6
+      "awayElo": 1460.6,
+      "scoringContext": {
+        "projectedHomePoints": 23.0,
+        "projectedAwayPoints": 24.4,
+        "projectedTotal": 47.4,
+        "homeOffensePPG": 21.1,
+        "awayOffensePPG": 26.4,
+        "homeDefenseAllowedPPG": 22.4,
+        "awayDefenseAllowedPPG": 24.9,
+        "homeSampleGames": 5,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_13_KC_LA",
@@ -2536,7 +4688,19 @@
       "homeWin": 0.582,
       "projectedMargin": 2.3,
       "homeElo": 1552.7,
-      "awayElo": 1550.2
+      "awayElo": 1550.2,
+      "scoringContext": {
+        "projectedHomePoints": 21.4,
+        "projectedAwayPoints": 23.8,
+        "projectedTotal": 45.2,
+        "homeOffensePPG": 21.9,
+        "awayOffensePPG": 26.0,
+        "homeDefenseAllowedPPG": 21.6,
+        "awayDefenseAllowedPPG": 20.9,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_13_CIN_CLE",
@@ -2550,7 +4714,19 @@
       "homeWin": 0.5578,
       "projectedMargin": 1.6,
       "homeElo": 1470.9,
-      "awayElo": 1485.6
+      "awayElo": 1485.6,
+      "scoringContext": {
+        "projectedHomePoints": 21.6,
+        "projectedAwayPoints": 23.2,
+        "projectedTotal": 44.9,
+        "homeOffensePPG": 21.4,
+        "awayOffensePPG": 23.4,
+        "homeDefenseAllowedPPG": 23.1,
+        "awayDefenseAllowedPPG": 21.9,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_13_DET_ATL",
@@ -2564,7 +4740,19 @@
       "homeWin": 0.5115,
       "projectedMargin": 0.3,
       "homeElo": 1488.5,
-      "awayElo": 1535.6
+      "awayElo": 1535.6,
+      "scoringContext": {
+        "projectedHomePoints": 25.2,
+        "projectedAwayPoints": 24.4,
+        "projectedTotal": 49.6,
+        "homeOffensePPG": 23.2,
+        "awayOffensePPG": 26.1,
+        "homeDefenseAllowedPPG": 22.8,
+        "awayDefenseAllowedPPG": 27.1,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_13_GB_NO",
@@ -2578,7 +4766,19 @@
       "homeWin": 0.4679,
       "projectedMargin": -0.9,
       "homeElo": 1439.4,
-      "awayElo": 1516.7
+      "awayElo": 1516.7,
+      "scoringContext": {
+        "projectedHomePoints": 24.4,
+        "projectedAwayPoints": 23.8,
+        "projectedTotal": 48.2,
+        "homeOffensePPG": 24.4,
+        "awayOffensePPG": 20.4,
+        "homeDefenseAllowedPPG": 27.2,
+        "awayDefenseAllowedPPG": 24.4,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_13_JAX_CHI",
@@ -2592,7 +4792,19 @@
       "homeWin": 0.5575,
       "projectedMargin": 1.6,
       "homeElo": 1522.3,
-      "awayElo": 1537.2
+      "awayElo": 1537.2,
+      "scoringContext": {
+        "projectedHomePoints": 21.6,
+        "projectedAwayPoints": 21.8,
+        "projectedTotal": 43.4,
+        "homeOffensePPG": 25.2,
+        "awayOffensePPG": 24.2,
+        "homeDefenseAllowedPPG": 19.4,
+        "awayDefenseAllowedPPG": 17.9,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_13_LAC_TB",
@@ -2606,7 +4818,19 @@
       "homeWin": 0.5492,
       "projectedMargin": 1.4,
       "homeElo": 1463.4,
-      "awayElo": 1484.1
+      "awayElo": 1484.1,
+      "scoringContext": {
+        "projectedHomePoints": 22.8,
+        "projectedAwayPoints": 21.0,
+        "projectedTotal": 43.8,
+        "homeOffensePPG": 21.1,
+        "awayOffensePPG": 19.6,
+        "homeDefenseAllowedPPG": 22.4,
+        "awayDefenseAllowedPPG": 24.5,
+        "homeSampleGames": 5,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_13_SF_NYG",
@@ -2620,7 +4844,19 @@
       "homeWin": 0.4018,
       "projectedMargin": -2.8,
       "homeElo": 1447.4,
-      "awayElo": 1571.5
+      "awayElo": 1571.5,
+      "scoringContext": {
+        "projectedHomePoints": 20.4,
+        "projectedAwayPoints": 23.8,
+        "projectedTotal": 44.2,
+        "homeOffensePPG": 21.5,
+        "awayOffensePPG": 26.5,
+        "homeDefenseAllowedPPG": 21.1,
+        "awayDefenseAllowedPPG": 19.2,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_13_WAS_TEN",
@@ -2634,7 +4870,19 @@
       "homeWin": 0.4565,
       "projectedMargin": -1.2,
       "homeElo": 1378.0,
-      "awayElo": 1463.3
+      "awayElo": 1463.3,
+      "scoringContext": {
+        "projectedHomePoints": 22.3,
+        "projectedAwayPoints": 21.9,
+        "projectedTotal": 44.2,
+        "homeOffensePPG": 18.1,
+        "awayOffensePPG": 22.2,
+        "homeDefenseAllowedPPG": 21.6,
+        "awayDefenseAllowedPPG": 26.5,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_13_MIA_DEN",
@@ -2648,7 +4896,19 @@
       "homeWin": 0.7184,
       "projectedMargin": 6.5,
       "homeElo": 1558.3,
-      "awayElo": 1450.6
+      "awayElo": 1450.6,
+      "scoringContext": {
+        "projectedHomePoints": 22.2,
+        "projectedAwayPoints": 20.0,
+        "projectedTotal": 42.2,
+        "homeOffensePPG": 20.5,
+        "awayOffensePPG": 17.0,
+        "homeDefenseAllowedPPG": 23.0,
+        "awayDefenseAllowedPPG": 23.9,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_13_PHI_ARI",
@@ -2662,7 +4922,19 @@
       "homeWin": 0.3905,
       "projectedMargin": -3.1,
       "homeElo": 1417.6,
-      "awayElo": 1549.9
+      "awayElo": 1549.9,
+      "scoringContext": {
+        "projectedHomePoints": 22.5,
+        "projectedAwayPoints": 23.2,
+        "projectedTotal": 45.8,
+        "homeOffensePPG": 22.1,
+        "awayOffensePPG": 20.6,
+        "homeDefenseAllowedPPG": 25.9,
+        "awayDefenseAllowedPPG": 22.9,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_13_BUF_NE",
@@ -2676,7 +4948,19 @@
       "homeWin": 0.5311,
       "projectedMargin": 0.9,
       "homeElo": 1546.0,
-      "awayElo": 1579.3
+      "awayElo": 1579.3,
+      "scoringContext": {
+        "projectedHomePoints": 22.0,
+        "projectedAwayPoints": 24.0,
+        "projectedTotal": 46.0,
+        "homeOffensePPG": 19.4,
+        "awayOffensePPG": 27.1,
+        "homeDefenseAllowedPPG": 20.9,
+        "awayDefenseAllowedPPG": 24.6,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_13_CAR_MIN",
@@ -2690,7 +4974,19 @@
       "homeWin": 0.7178,
       "projectedMargin": 6.5,
       "homeElo": 1567.7,
-      "awayElo": 1460.6
+      "awayElo": 1460.6,
+      "scoringContext": {
+        "projectedHomePoints": 23.4,
+        "projectedAwayPoints": 22.0,
+        "projectedTotal": 45.4,
+        "homeOffensePPG": 22.0,
+        "awayOffensePPG": 26.4,
+        "homeDefenseAllowedPPG": 17.6,
+        "awayDefenseAllowedPPG": 24.9,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_13_HOU_PIT",
@@ -2704,7 +5000,19 @@
       "homeWin": 0.598,
       "projectedMargin": 2.8,
       "homeElo": 1516.1,
-      "awayElo": 1502.1
+      "awayElo": 1502.1,
+      "scoringContext": {
+        "projectedHomePoints": 22.9,
+        "projectedAwayPoints": 21.9,
+        "projectedTotal": 44.8,
+        "homeOffensePPG": 20.9,
+        "awayOffensePPG": 21.8,
+        "homeDefenseAllowedPPG": 22.1,
+        "awayDefenseAllowedPPG": 24.9,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_13_DAL_SEA",
@@ -2718,7 +5026,19 @@
       "homeWin": 0.7314,
       "projectedMargin": 7.0,
       "homeElo": 1596.4,
-      "awayElo": 1477.4
+      "awayElo": 1477.4,
+      "scoringContext": {
+        "projectedHomePoints": 24.7,
+        "projectedAwayPoints": 22.9,
+        "projectedTotal": 47.6,
+        "homeOffensePPG": 24.4,
+        "awayOffensePPG": 25.3,
+        "homeDefenseAllowedPPG": 20.4,
+        "awayDefenseAllowedPPG": 25.1,
+        "homeSampleGames": 4,
+        "awaySampleGames": 5,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_14_MIN_NE",
@@ -2732,7 +5052,19 @@
       "homeWin": 0.5477,
       "projectedMargin": 1.3,
       "homeElo": 1546.0,
-      "awayElo": 1567.7
+      "awayElo": 1567.7,
+      "scoringContext": {
+        "projectedHomePoints": 18.5,
+        "projectedAwayPoints": 21.4,
+        "projectedTotal": 39.9,
+        "homeOffensePPG": 19.4,
+        "awayOffensePPG": 22.0,
+        "homeDefenseAllowedPPG": 20.9,
+        "awayDefenseAllowedPPG": 17.6,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_14_ATL_CLE",
@@ -2746,7 +5078,19 @@
       "homeWin": 0.5536,
       "projectedMargin": 1.5,
       "homeElo": 1470.9,
-      "awayElo": 1488.5
+      "awayElo": 1488.5,
+      "scoringContext": {
+        "projectedHomePoints": 22.1,
+        "projectedAwayPoints": 23.2,
+        "projectedTotal": 45.2,
+        "homeOffensePPG": 21.4,
+        "awayOffensePPG": 23.2,
+        "homeDefenseAllowedPPG": 23.1,
+        "awayDefenseAllowedPPG": 22.8,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_14_CHI_MIA",
@@ -2760,7 +5104,19 @@
       "homeWin": 0.4759,
       "projectedMargin": -0.7,
       "homeElo": 1450.6,
-      "awayElo": 1522.3
+      "awayElo": 1522.3,
+      "scoringContext": {
+        "projectedHomePoints": 18.2,
+        "projectedAwayPoints": 24.6,
+        "projectedTotal": 42.8,
+        "homeOffensePPG": 17.0,
+        "awayOffensePPG": 25.2,
+        "homeDefenseAllowedPPG": 23.9,
+        "awayDefenseAllowedPPG": 19.4,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_14_DEN_NYJ",
@@ -2774,7 +5130,19 @@
       "homeWin": 0.3686,
       "projectedMargin": -3.7,
       "homeElo": 1409.8,
-      "awayElo": 1558.3
+      "awayElo": 1558.3,
+      "scoringContext": {
+        "projectedHomePoints": 21.9,
+        "projectedAwayPoints": 21.1,
+        "projectedTotal": 43.0,
+        "homeOffensePPG": 20.8,
+        "awayOffensePPG": 20.5,
+        "homeDefenseAllowedPPG": 21.8,
+        "awayDefenseAllowedPPG": 23.0,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_14_HOU_WAS",
@@ -2788,7 +5156,19 @@
       "homeWin": 0.5232,
       "projectedMargin": 0.6,
       "homeElo": 1463.3,
-      "awayElo": 1502.1
+      "awayElo": 1502.1,
+      "scoringContext": {
+        "projectedHomePoints": 23.6,
+        "projectedAwayPoints": 24.1,
+        "projectedTotal": 47.7,
+        "homeOffensePPG": 22.2,
+        "awayOffensePPG": 21.8,
+        "homeDefenseAllowedPPG": 26.5,
+        "awayDefenseAllowedPPG": 24.9,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_14_IND_PHI",
@@ -2802,7 +5182,19 @@
       "homeWin": 0.6661,
       "projectedMargin": 4.8,
       "homeElo": 1549.9,
-      "awayElo": 1485.0
+      "awayElo": 1485.0,
+      "scoringContext": {
+        "projectedHomePoints": 22.4,
+        "projectedAwayPoints": 23.4,
+        "projectedTotal": 45.9,
+        "homeOffensePPG": 20.6,
+        "awayOffensePPG": 24.0,
+        "homeDefenseAllowedPPG": 22.9,
+        "awayDefenseAllowedPPG": 24.2,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_14_NO_CAR",
@@ -2816,7 +5208,19 @@
       "homeWin": 0.608,
       "projectedMargin": 3.0,
       "homeElo": 1460.6,
-      "awayElo": 1439.4
+      "awayElo": 1439.4,
+      "scoringContext": {
+        "projectedHomePoints": 26.8,
+        "projectedAwayPoints": 24.6,
+        "projectedTotal": 51.4,
+        "homeOffensePPG": 26.4,
+        "awayOffensePPG": 24.4,
+        "homeDefenseAllowedPPG": 24.9,
+        "awayDefenseAllowedPPG": 27.2,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_14_TB_BAL",
@@ -2830,7 +5234,19 @@
       "homeWin": 0.676,
       "projectedMargin": 5.1,
       "homeElo": 1536.2,
-      "awayElo": 1463.4
+      "awayElo": 1463.4,
+      "scoringContext": {
+        "projectedHomePoints": 24.1,
+        "projectedAwayPoints": 22.2,
+        "projectedTotal": 46.3,
+        "homeOffensePPG": 25.8,
+        "awayOffensePPG": 21.1,
+        "homeDefenseAllowedPPG": 23.2,
+        "awayDefenseAllowedPPG": 22.4,
+        "homeSampleGames": 4,
+        "awaySampleGames": 5,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_14_TEN_DET",
@@ -2844,7 +5260,19 @@
       "homeWin": 0.7727,
       "projectedMargin": 8.5,
       "homeElo": 1535.6,
-      "awayElo": 1378.0
+      "awayElo": 1378.0,
+      "scoringContext": {
+        "projectedHomePoints": 23.9,
+        "projectedAwayPoints": 22.6,
+        "projectedTotal": 46.5,
+        "homeOffensePPG": 26.1,
+        "awayOffensePPG": 18.1,
+        "homeDefenseAllowedPPG": 27.1,
+        "awayDefenseAllowedPPG": 21.6,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_14_LAC_LV",
@@ -2858,7 +5286,19 @@
       "homeWin": 0.5199,
       "projectedMargin": 0.6,
       "homeElo": 1442.9,
-      "awayElo": 1484.1
+      "awayElo": 1484.1,
+      "scoringContext": {
+        "projectedHomePoints": 25.1,
+        "projectedAwayPoints": 20.7,
+        "projectedTotal": 45.8,
+        "homeOffensePPG": 25.6,
+        "awayOffensePPG": 19.6,
+        "homeDefenseAllowedPPG": 21.8,
+        "awayDefenseAllowedPPG": 24.5,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_14_KC_CIN",
@@ -2872,7 +5312,19 @@
       "homeWin": 0.4861,
       "projectedMargin": -0.4,
       "homeElo": 1485.6,
-      "awayElo": 1550.2
+      "awayElo": 1550.2,
+      "scoringContext": {
+        "projectedHomePoints": 22.1,
+        "projectedAwayPoints": 23.9,
+        "projectedTotal": 46.1,
+        "homeOffensePPG": 23.4,
+        "awayOffensePPG": 26.0,
+        "homeDefenseAllowedPPG": 21.9,
+        "awayDefenseAllowedPPG": 20.9,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_14_LA_SF",
@@ -2886,7 +5338,19 @@
       "homeWin": 0.6046,
       "projectedMargin": 3.0,
       "homeElo": 1571.5,
-      "awayElo": 1552.7
+      "awayElo": 1552.7,
+      "scoringContext": {
+        "projectedHomePoints": 24.1,
+        "projectedAwayPoints": 20.6,
+        "projectedTotal": 44.6,
+        "homeOffensePPG": 26.5,
+        "awayOffensePPG": 21.9,
+        "homeDefenseAllowedPPG": 19.2,
+        "awayDefenseAllowedPPG": 21.6,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_14_NYG_SEA",
@@ -2900,7 +5364,19 @@
       "homeWin": 0.764,
       "projectedMargin": 8.2,
       "homeElo": 1596.4,
-      "awayElo": 1447.4
+      "awayElo": 1447.4,
+      "scoringContext": {
+        "projectedHomePoints": 22.8,
+        "projectedAwayPoints": 20.9,
+        "projectedTotal": 43.7,
+        "homeOffensePPG": 24.4,
+        "awayOffensePPG": 21.5,
+        "homeDefenseAllowedPPG": 20.4,
+        "awayDefenseAllowedPPG": 21.1,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_14_BUF_GB",
@@ -2914,7 +5390,19 @@
       "homeWin": 0.489,
       "projectedMargin": -0.3,
       "homeElo": 1516.7,
-      "awayElo": 1579.3
+      "awayElo": 1579.3,
+      "scoringContext": {
+        "projectedHomePoints": 22.5,
+        "projectedAwayPoints": 25.8,
+        "projectedTotal": 48.2,
+        "homeOffensePPG": 20.4,
+        "awayOffensePPG": 27.1,
+        "homeDefenseAllowedPPG": 24.4,
+        "awayDefenseAllowedPPG": 24.6,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_14_PIT_JAX",
@@ -2928,7 +5416,19 @@
       "homeWin": 0.6078,
       "projectedMargin": 3.0,
       "homeElo": 1537.2,
-      "awayElo": 1516.1
+      "awayElo": 1516.1,
+      "scoringContext": {
+        "projectedHomePoints": 23.2,
+        "projectedAwayPoints": 19.4,
+        "projectedTotal": 42.6,
+        "homeOffensePPG": 24.2,
+        "awayOffensePPG": 20.9,
+        "homeDefenseAllowedPPG": 17.9,
+        "awayDefenseAllowedPPG": 22.1,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_15_SF_LAC",
@@ -2942,7 +5442,19 @@
       "homeWin": 0.4535,
       "projectedMargin": -1.3,
       "homeElo": 1484.1,
-      "awayElo": 1571.5
+      "awayElo": 1571.5,
+      "scoringContext": {
+        "projectedHomePoints": 19.4,
+        "projectedAwayPoints": 25.5,
+        "projectedTotal": 44.9,
+        "homeOffensePPG": 19.6,
+        "awayOffensePPG": 26.5,
+        "homeDefenseAllowedPPG": 24.5,
+        "awayDefenseAllowedPPG": 19.2,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_15_SEA_PHI",
@@ -2956,7 +5468,19 @@
       "homeWin": 0.5122,
       "projectedMargin": 0.3,
       "homeElo": 1549.9,
-      "awayElo": 1596.4
+      "awayElo": 1596.4,
+      "scoringContext": {
+        "projectedHomePoints": 20.5,
+        "projectedAwayPoints": 23.6,
+        "projectedTotal": 44.1,
+        "homeOffensePPG": 20.6,
+        "awayOffensePPG": 24.4,
+        "homeDefenseAllowedPPG": 22.9,
+        "awayDefenseAllowedPPG": 20.4,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_15_CHI_BUF",
@@ -2970,7 +5494,19 @@
       "homeWin": 0.6559,
       "projectedMargin": 4.5,
       "homeElo": 1579.3,
-      "awayElo": 1522.3
+      "awayElo": 1522.3,
+      "scoringContext": {
+        "projectedHomePoints": 23.2,
+        "projectedAwayPoints": 24.9,
+        "projectedTotal": 48.2,
+        "homeOffensePPG": 27.1,
+        "awayOffensePPG": 25.2,
+        "homeDefenseAllowedPPG": 24.6,
+        "awayDefenseAllowedPPG": 19.4,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_15_ATL_WAS",
@@ -2984,7 +5520,19 @@
       "homeWin": 0.5427,
       "projectedMargin": 1.2,
       "homeElo": 1463.3,
-      "awayElo": 1488.5
+      "awayElo": 1488.5,
+      "scoringContext": {
+        "projectedHomePoints": 22.5,
+        "projectedAwayPoints": 24.9,
+        "projectedTotal": 47.4,
+        "homeOffensePPG": 22.2,
+        "awayOffensePPG": 23.2,
+        "homeDefenseAllowedPPG": 26.5,
+        "awayDefenseAllowedPPG": 22.8,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_15_BAL_PIT",
@@ -2998,7 +5546,19 @@
       "homeWin": 0.5501,
       "projectedMargin": 1.4,
       "homeElo": 1516.1,
-      "awayElo": 1536.2
+      "awayElo": 1536.2,
+      "scoringContext": {
+        "projectedHomePoints": 22.1,
+        "projectedAwayPoints": 23.9,
+        "projectedTotal": 46.0,
+        "homeOffensePPG": 20.9,
+        "awayOffensePPG": 25.8,
+        "homeDefenseAllowedPPG": 22.1,
+        "awayDefenseAllowedPPG": 23.2,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_15_CIN_CAR",
@@ -3012,7 +5572,19 @@
       "homeWin": 0.5431,
       "projectedMargin": 1.2,
       "homeElo": 1460.6,
-      "awayElo": 1485.6
+      "awayElo": 1485.6,
+      "scoringContext": {
+        "projectedHomePoints": 24.1,
+        "projectedAwayPoints": 24.1,
+        "projectedTotal": 48.2,
+        "homeOffensePPG": 26.4,
+        "awayOffensePPG": 23.4,
+        "homeDefenseAllowedPPG": 24.9,
+        "awayDefenseAllowedPPG": 21.9,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_15_CLE_NYG",
@@ -3026,7 +5598,19 @@
       "homeWin": 0.5452,
       "projectedMargin": 1.3,
       "homeElo": 1447.4,
-      "awayElo": 1470.9
+      "awayElo": 1470.9,
+      "scoringContext": {
+        "projectedHomePoints": 22.3,
+        "projectedAwayPoints": 21.2,
+        "projectedTotal": 43.6,
+        "homeOffensePPG": 21.5,
+        "awayOffensePPG": 21.4,
+        "homeDefenseAllowedPPG": 21.1,
+        "awayDefenseAllowedPPG": 23.1,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_15_IND_TEN",
@@ -3040,7 +5624,19 @@
       "homeWin": 0.4257,
       "projectedMargin": -2.1,
       "homeElo": 1378.0,
-      "awayElo": 1485.0
+      "awayElo": 1485.0,
+      "scoringContext": {
+        "projectedHomePoints": 21.2,
+        "projectedAwayPoints": 22.8,
+        "projectedTotal": 44.0,
+        "homeOffensePPG": 18.1,
+        "awayOffensePPG": 24.0,
+        "homeDefenseAllowedPPG": 21.6,
+        "awayDefenseAllowedPPG": 24.2,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_15_JAX_HOU",
@@ -3054,7 +5650,19 @@
       "homeWin": 0.5287,
       "projectedMargin": 0.8,
       "homeElo": 1502.1,
-      "awayElo": 1537.2
+      "awayElo": 1537.2,
+      "scoringContext": {
+        "projectedHomePoints": 19.8,
+        "projectedAwayPoints": 24.6,
+        "projectedTotal": 44.4,
+        "homeOffensePPG": 21.8,
+        "awayOffensePPG": 24.2,
+        "homeDefenseAllowedPPG": 24.9,
+        "awayDefenseAllowedPPG": 17.9,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_15_MIA_GB",
@@ -3068,7 +5676,19 @@
       "homeWin": 0.6676,
       "projectedMargin": 4.8,
       "homeElo": 1516.7,
-      "awayElo": 1450.6
+      "awayElo": 1450.6,
+      "scoringContext": {
+        "projectedHomePoints": 22.1,
+        "projectedAwayPoints": 20.7,
+        "projectedTotal": 42.8,
+        "homeOffensePPG": 20.4,
+        "awayOffensePPG": 17.0,
+        "homeDefenseAllowedPPG": 24.4,
+        "awayDefenseAllowedPPG": 23.9,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_15_NO_TB",
@@ -3082,7 +5702,19 @@
       "homeWin": 0.6119,
       "projectedMargin": 3.2,
       "homeElo": 1463.4,
-      "awayElo": 1439.4
+      "awayElo": 1439.4,
+      "scoringContext": {
+        "projectedHomePoints": 24.2,
+        "projectedAwayPoints": 23.4,
+        "projectedTotal": 47.6,
+        "homeOffensePPG": 21.1,
+        "awayOffensePPG": 24.4,
+        "homeDefenseAllowedPPG": 22.4,
+        "awayDefenseAllowedPPG": 27.2,
+        "homeSampleGames": 5,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_15_NYJ_ARI",
@@ -3096,7 +5728,19 @@
       "homeWin": 0.5894,
       "projectedMargin": 2.5,
       "homeElo": 1417.6,
-      "awayElo": 1409.8
+      "awayElo": 1409.8,
+      "scoringContext": {
+        "projectedHomePoints": 21.9,
+        "projectedAwayPoints": 23.3,
+        "projectedTotal": 45.2,
+        "homeOffensePPG": 22.1,
+        "awayOffensePPG": 20.8,
+        "homeDefenseAllowedPPG": 25.9,
+        "awayDefenseAllowedPPG": 21.8,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_15_DAL_LA",
@@ -3110,7 +5754,19 @@
       "homeWin": 0.6792,
       "projectedMargin": 5.2,
       "homeElo": 1552.7,
-      "awayElo": 1477.4
+      "awayElo": 1477.4,
+      "scoringContext": {
+        "projectedHomePoints": 23.5,
+        "projectedAwayPoints": 23.5,
+        "projectedTotal": 47.0,
+        "homeOffensePPG": 21.9,
+        "awayOffensePPG": 25.3,
+        "homeDefenseAllowedPPG": 21.6,
+        "awayDefenseAllowedPPG": 25.1,
+        "homeSampleGames": 4,
+        "awaySampleGames": 5,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_15_DEN_LV",
@@ -3124,7 +5780,19 @@
       "homeWin": 0.414,
       "projectedMargin": -2.4,
       "homeElo": 1442.9,
-      "awayElo": 1558.3
+      "awayElo": 1558.3,
+      "scoringContext": {
+        "projectedHomePoints": 24.3,
+        "projectedAwayPoints": 21.1,
+        "projectedTotal": 45.4,
+        "homeOffensePPG": 25.6,
+        "awayOffensePPG": 20.5,
+        "homeDefenseAllowedPPG": 21.8,
+        "awayDefenseAllowedPPG": 23.0,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_15_DET_MIN",
@@ -3138,7 +5806,19 @@
       "homeWin": 0.6229,
       "projectedMargin": 3.5,
       "homeElo": 1567.7,
-      "awayElo": 1535.6
+      "awayElo": 1535.6,
+      "scoringContext": {
+        "projectedHomePoints": 24.6,
+        "projectedAwayPoints": 21.9,
+        "projectedTotal": 46.4,
+        "homeOffensePPG": 22.0,
+        "awayOffensePPG": 26.1,
+        "homeDefenseAllowedPPG": 17.6,
+        "awayDefenseAllowedPPG": 27.1,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_15_NE_KC",
@@ -3152,7 +5832,19 @@
       "homeWin": 0.5844,
       "projectedMargin": 2.4,
       "homeElo": 1550.2,
-      "awayElo": 1546.0
+      "awayElo": 1546.0,
+      "scoringContext": {
+        "projectedHomePoints": 23.4,
+        "projectedAwayPoints": 20.1,
+        "projectedTotal": 43.6,
+        "homeOffensePPG": 26.0,
+        "awayOffensePPG": 19.4,
+        "homeDefenseAllowedPPG": 20.9,
+        "awayDefenseAllowedPPG": 20.9,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_16_HOU_PHI",
@@ -3166,7 +5858,19 @@
       "homeWin": 0.6437,
       "projectedMargin": 4.1,
       "homeElo": 1549.9,
-      "awayElo": 1502.1
+      "awayElo": 1502.1,
+      "scoringContext": {
+        "projectedHomePoints": 22.8,
+        "projectedAwayPoints": 22.3,
+        "projectedTotal": 45.1,
+        "homeOffensePPG": 20.6,
+        "awayOffensePPG": 21.8,
+        "homeDefenseAllowedPPG": 22.9,
+        "awayDefenseAllowedPPG": 24.9,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_16_GB_CHI",
@@ -3180,7 +5884,19 @@
       "homeWin": 0.5863,
       "projectedMargin": 2.4,
       "homeElo": 1522.3,
-      "awayElo": 1516.7
+      "awayElo": 1516.7,
+      "scoringContext": {
+        "projectedHomePoints": 24.8,
+        "projectedAwayPoints": 19.9,
+        "projectedTotal": 44.7,
+        "homeOffensePPG": 25.2,
+        "awayOffensePPG": 20.4,
+        "homeDefenseAllowedPPG": 19.4,
+        "awayDefenseAllowedPPG": 24.4,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_16_BUF_DEN",
@@ -3194,7 +5910,19 @@
       "homeWin": 0.5487,
       "projectedMargin": 1.4,
       "homeElo": 1558.3,
-      "awayElo": 1579.3
+      "awayElo": 1579.3,
+      "scoringContext": {
+        "projectedHomePoints": 22.6,
+        "projectedAwayPoints": 25.1,
+        "projectedTotal": 47.6,
+        "homeOffensePPG": 20.5,
+        "awayOffensePPG": 27.1,
+        "homeDefenseAllowedPPG": 23.0,
+        "awayDefenseAllowedPPG": 24.6,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_16_LA_SEA",
@@ -3208,7 +5936,19 @@
       "homeWin": 0.6383,
       "projectedMargin": 3.9,
       "homeElo": 1596.4,
-      "awayElo": 1552.7
+      "awayElo": 1552.7,
+      "scoringContext": {
+        "projectedHomePoints": 23.0,
+        "projectedAwayPoints": 21.1,
+        "projectedTotal": 44.1,
+        "homeOffensePPG": 24.4,
+        "awayOffensePPG": 21.9,
+        "homeDefenseAllowedPPG": 20.4,
+        "awayDefenseAllowedPPG": 21.6,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_16_ARI_NO",
@@ -3222,7 +5962,19 @@
       "homeWin": 0.6087,
       "projectedMargin": 3.1,
       "homeElo": 1439.4,
-      "awayElo": 1417.6
+      "awayElo": 1417.6,
+      "scoringContext": {
+        "projectedHomePoints": 25.1,
+        "projectedAwayPoints": 24.7,
+        "projectedTotal": 49.8,
+        "homeOffensePPG": 24.4,
+        "awayOffensePPG": 22.1,
+        "homeDefenseAllowedPPG": 27.2,
+        "awayDefenseAllowedPPG": 25.9,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_16_CAR_PIT",
@@ -3236,7 +5988,19 @@
       "homeWin": 0.6539,
       "projectedMargin": 4.4,
       "homeElo": 1516.1,
-      "awayElo": 1460.6
+      "awayElo": 1460.6,
+      "scoringContext": {
+        "projectedHomePoints": 22.9,
+        "projectedAwayPoints": 24.2,
+        "projectedTotal": 47.1,
+        "homeOffensePPG": 20.9,
+        "awayOffensePPG": 26.4,
+        "homeDefenseAllowedPPG": 22.1,
+        "awayDefenseAllowedPPG": 24.9,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_16_CIN_IND",
@@ -3250,7 +6014,19 @@
       "homeWin": 0.5776,
       "projectedMargin": 2.2,
       "homeElo": 1485.0,
-      "awayElo": 1485.6
+      "awayElo": 1485.6,
+      "scoringContext": {
+        "projectedHomePoints": 22.9,
+        "projectedAwayPoints": 23.8,
+        "projectedTotal": 46.8,
+        "homeOffensePPG": 24.0,
+        "awayOffensePPG": 23.4,
+        "homeDefenseAllowedPPG": 24.2,
+        "awayDefenseAllowedPPG": 21.9,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_16_CLE_BAL",
@@ -3264,7 +6040,19 @@
       "homeWin": 0.6665,
       "projectedMargin": 4.8,
       "homeElo": 1536.2,
-      "awayElo": 1470.9
+      "awayElo": 1470.9,
+      "scoringContext": {
+        "projectedHomePoints": 24.4,
+        "projectedAwayPoints": 22.3,
+        "projectedTotal": 46.8,
+        "homeOffensePPG": 25.8,
+        "awayOffensePPG": 21.4,
+        "homeDefenseAllowedPPG": 23.2,
+        "awayDefenseAllowedPPG": 23.1,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_16_LAC_MIA",
@@ -3278,7 +6066,19 @@
       "homeWin": 0.5308,
       "projectedMargin": 0.9,
       "homeElo": 1450.6,
-      "awayElo": 1484.1
+      "awayElo": 1484.1,
+      "scoringContext": {
+        "projectedHomePoints": 20.8,
+        "projectedAwayPoints": 21.8,
+        "projectedTotal": 42.5,
+        "homeOffensePPG": 17.0,
+        "awayOffensePPG": 19.6,
+        "homeDefenseAllowedPPG": 23.9,
+        "awayDefenseAllowedPPG": 24.5,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_16_NE_NYJ",
@@ -3292,7 +6092,19 @@
       "homeWin": 0.3852,
       "projectedMargin": -3.2,
       "homeElo": 1409.8,
-      "awayElo": 1546.0
+      "awayElo": 1546.0,
+      "scoringContext": {
+        "projectedHomePoints": 20.8,
+        "projectedAwayPoints": 20.6,
+        "projectedTotal": 41.4,
+        "homeOffensePPG": 20.8,
+        "awayOffensePPG": 19.4,
+        "homeDefenseAllowedPPG": 21.8,
+        "awayDefenseAllowedPPG": 20.9,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_16_TB_ATL",
@@ -3306,7 +6118,19 @@
       "homeWin": 0.6133,
       "projectedMargin": 3.2,
       "homeElo": 1488.5,
-      "awayElo": 1463.4
+      "awayElo": 1463.4,
+      "scoringContext": {
+        "projectedHomePoints": 22.8,
+        "projectedAwayPoints": 21.9,
+        "projectedTotal": 44.8,
+        "homeOffensePPG": 23.2,
+        "awayOffensePPG": 21.1,
+        "homeDefenseAllowedPPG": 22.8,
+        "awayDefenseAllowedPPG": 22.4,
+        "homeSampleGames": 4,
+        "awaySampleGames": 5,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_16_WAS_MIN",
@@ -3320,7 +6144,19 @@
       "homeWin": 0.7146,
       "projectedMargin": 6.4,
       "homeElo": 1567.7,
-      "awayElo": 1463.3
+      "awayElo": 1463.3,
+      "scoringContext": {
+        "projectedHomePoints": 24.2,
+        "projectedAwayPoints": 19.9,
+        "projectedTotal": 44.2,
+        "homeOffensePPG": 22.0,
+        "awayOffensePPG": 22.2,
+        "homeDefenseAllowedPPG": 17.6,
+        "awayDefenseAllowedPPG": 26.5,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_16_TEN_LV",
@@ -3334,7 +6170,19 @@
       "homeWin": 0.6661,
       "projectedMargin": 4.8,
       "homeElo": 1442.9,
-      "awayElo": 1378.0
+      "awayElo": 1378.0,
+      "scoringContext": {
+        "projectedHomePoints": 23.6,
+        "projectedAwayPoints": 19.9,
+        "projectedTotal": 43.6,
+        "homeOffensePPG": 25.6,
+        "awayOffensePPG": 18.1,
+        "homeDefenseAllowedPPG": 21.8,
+        "awayDefenseAllowedPPG": 21.6,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_16_SF_KC",
@@ -3348,7 +6196,19 @@
       "homeWin": 0.5484,
       "projectedMargin": 1.3,
       "homeElo": 1550.2,
-      "awayElo": 1571.5
+      "awayElo": 1571.5,
+      "scoringContext": {
+        "projectedHomePoints": 22.6,
+        "projectedAwayPoints": 23.7,
+        "projectedTotal": 46.3,
+        "homeOffensePPG": 26.0,
+        "awayOffensePPG": 26.5,
+        "homeDefenseAllowedPPG": 20.9,
+        "awayDefenseAllowedPPG": 19.2,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_16_JAX_DAL",
@@ -3362,7 +6222,19 @@
       "homeWin": 0.4932,
       "projectedMargin": -0.2,
       "homeElo": 1477.4,
-      "awayElo": 1537.2
+      "awayElo": 1537.2,
+      "scoringContext": {
+        "projectedHomePoints": 21.6,
+        "projectedAwayPoints": 24.7,
+        "projectedTotal": 46.3,
+        "homeOffensePPG": 25.3,
+        "awayOffensePPG": 24.2,
+        "homeDefenseAllowedPPG": 25.1,
+        "awayDefenseAllowedPPG": 17.9,
+        "homeSampleGames": 5,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_16_NYG_DET",
@@ -3376,7 +6248,19 @@
       "homeWin": 0.6951,
       "projectedMargin": 5.7,
       "homeElo": 1535.6,
-      "awayElo": 1447.4
+      "awayElo": 1447.4,
+      "scoringContext": {
+        "projectedHomePoints": 23.6,
+        "projectedAwayPoints": 24.3,
+        "projectedTotal": 47.9,
+        "homeOffensePPG": 26.1,
+        "awayOffensePPG": 21.5,
+        "homeDefenseAllowedPPG": 27.1,
+        "awayDefenseAllowedPPG": 21.1,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_17_BAL_CIN",
@@ -3390,7 +6274,19 @@
       "homeWin": 0.5063,
       "projectedMargin": 0.2,
       "homeElo": 1485.6,
-      "awayElo": 1536.2
+      "awayElo": 1536.2,
+      "scoringContext": {
+        "projectedHomePoints": 23.3,
+        "projectedAwayPoints": 23.8,
+        "projectedTotal": 47.1,
+        "homeOffensePPG": 23.4,
+        "awayOffensePPG": 25.8,
+        "homeDefenseAllowedPPG": 21.9,
+        "awayDefenseAllowedPPG": 23.2,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_17_BUF_MIA",
@@ -3404,7 +6300,19 @@
       "homeWin": 0.3954,
       "projectedMargin": -3.0,
       "homeElo": 1450.6,
-      "awayElo": 1579.3
+      "awayElo": 1579.3,
+      "scoringContext": {
+        "projectedHomePoints": 20.8,
+        "projectedAwayPoints": 25.5,
+        "projectedTotal": 46.3,
+        "homeOffensePPG": 17.0,
+        "awayOffensePPG": 27.1,
+        "homeDefenseAllowedPPG": 23.9,
+        "awayDefenseAllowedPPG": 24.6,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_17_DEN_NE",
@@ -3418,7 +6326,19 @@
       "homeWin": 0.5611,
       "projectedMargin": 1.7,
       "homeElo": 1546.0,
-      "awayElo": 1558.3
+      "awayElo": 1558.3,
+      "scoringContext": {
+        "projectedHomePoints": 21.2,
+        "projectedAwayPoints": 20.7,
+        "projectedTotal": 41.9,
+        "homeOffensePPG": 19.4,
+        "awayOffensePPG": 20.5,
+        "homeDefenseAllowedPPG": 20.9,
+        "awayDefenseAllowedPPG": 23.0,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_17_IND_CLE",
@@ -3432,7 +6352,19 @@
       "homeWin": 0.5587,
       "projectedMargin": 1.6,
       "homeElo": 1470.9,
-      "awayElo": 1485.0
+      "awayElo": 1485.0,
+      "scoringContext": {
+        "projectedHomePoints": 22.8,
+        "projectedAwayPoints": 23.6,
+        "projectedTotal": 46.4,
+        "homeOffensePPG": 21.4,
+        "awayOffensePPG": 24.0,
+        "homeDefenseAllowedPPG": 23.1,
+        "awayDefenseAllowedPPG": 24.2,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_17_KC_LAC",
@@ -3446,7 +6378,19 @@
       "homeWin": 0.484,
       "projectedMargin": -0.4,
       "homeElo": 1484.1,
-      "awayElo": 1550.2
+      "awayElo": 1550.2,
+      "scoringContext": {
+        "projectedHomePoints": 20.2,
+        "projectedAwayPoints": 25.2,
+        "projectedTotal": 45.5,
+        "homeOffensePPG": 19.6,
+        "awayOffensePPG": 26.0,
+        "homeDefenseAllowedPPG": 24.5,
+        "awayDefenseAllowedPPG": 20.9,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_17_LA_TB",
@@ -3460,7 +6404,19 @@
       "homeWin": 0.4508,
       "projectedMargin": -1.4,
       "homeElo": 1463.4,
-      "awayElo": 1552.7
+      "awayElo": 1552.7,
+      "scoringContext": {
+        "projectedHomePoints": 21.4,
+        "projectedAwayPoints": 22.2,
+        "projectedTotal": 43.5,
+        "homeOffensePPG": 21.1,
+        "awayOffensePPG": 21.9,
+        "homeDefenseAllowedPPG": 22.4,
+        "awayDefenseAllowedPPG": 21.6,
+        "homeSampleGames": 5,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_17_MIN_NYJ",
@@ -3474,7 +6430,19 @@
       "homeWin": 0.356,
       "projectedMargin": -4.1,
       "homeElo": 1409.8,
-      "awayElo": 1567.7
+      "awayElo": 1567.7,
+      "scoringContext": {
+        "projectedHomePoints": 19.2,
+        "projectedAwayPoints": 21.9,
+        "projectedTotal": 41.1,
+        "homeOffensePPG": 20.8,
+        "awayOffensePPG": 22.0,
+        "homeDefenseAllowedPPG": 21.8,
+        "awayDefenseAllowedPPG": 17.6,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_17_NO_ATL",
@@ -3488,7 +6456,19 @@
       "homeWin": 0.6456,
       "projectedMargin": 4.2,
       "homeElo": 1488.5,
-      "awayElo": 1439.4
+      "awayElo": 1439.4,
+      "scoringContext": {
+        "projectedHomePoints": 25.2,
+        "projectedAwayPoints": 23.6,
+        "projectedTotal": 48.8,
+        "homeOffensePPG": 23.2,
+        "awayOffensePPG": 24.4,
+        "homeDefenseAllowedPPG": 22.8,
+        "awayDefenseAllowedPPG": 27.2,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_17_NYG_DAL",
@@ -3502,7 +6482,19 @@
       "homeWin": 0.62,
       "projectedMargin": 3.4,
       "homeElo": 1477.4,
-      "awayElo": 1447.4
+      "awayElo": 1447.4,
+      "scoringContext": {
+        "projectedHomePoints": 23.2,
+        "projectedAwayPoints": 23.3,
+        "projectedTotal": 46.5,
+        "homeOffensePPG": 25.3,
+        "awayOffensePPG": 21.5,
+        "homeDefenseAllowedPPG": 25.1,
+        "awayDefenseAllowedPPG": 21.1,
+        "homeSampleGames": 5,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_17_PIT_TEN",
@@ -3516,7 +6508,19 @@
       "homeWin": 0.3826,
       "projectedMargin": -3.3,
       "homeElo": 1378.0,
-      "awayElo": 1516.1
+      "awayElo": 1516.1,
+      "scoringContext": {
+        "projectedHomePoints": 20.1,
+        "projectedAwayPoints": 21.2,
+        "projectedTotal": 41.4,
+        "homeOffensePPG": 18.1,
+        "awayOffensePPG": 20.9,
+        "homeDefenseAllowedPPG": 21.6,
+        "awayDefenseAllowedPPG": 22.1,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_17_SEA_CAR",
@@ -3530,7 +6534,19 @@
       "homeWin": 0.3857,
       "projectedMargin": -3.2,
       "homeElo": 1460.6,
-      "awayElo": 1596.4
+      "awayElo": 1596.4,
+      "scoringContext": {
+        "projectedHomePoints": 23.4,
+        "projectedAwayPoints": 24.6,
+        "projectedTotal": 48.0,
+        "homeOffensePPG": 26.4,
+        "awayOffensePPG": 24.4,
+        "homeDefenseAllowedPPG": 24.9,
+        "awayDefenseAllowedPPG": 20.4,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_17_WAS_JAX",
@@ -3544,7 +6560,19 @@
       "homeWin": 0.6774,
       "projectedMargin": 5.2,
       "homeElo": 1537.2,
-      "awayElo": 1463.3
+      "awayElo": 1463.3,
+      "scoringContext": {
+        "projectedHomePoints": 25.4,
+        "projectedAwayPoints": 20.1,
+        "projectedTotal": 45.4,
+        "homeOffensePPG": 24.2,
+        "awayOffensePPG": 22.2,
+        "homeDefenseAllowedPPG": 17.9,
+        "awayDefenseAllowedPPG": 26.5,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_17_LV_ARI",
@@ -3558,7 +6586,19 @@
       "homeWin": 0.5426,
       "projectedMargin": 1.2,
       "homeElo": 1417.6,
-      "awayElo": 1442.9
+      "awayElo": 1442.9,
+      "scoringContext": {
+        "projectedHomePoints": 21.9,
+        "projectedAwayPoints": 25.8,
+        "projectedTotal": 47.7,
+        "homeOffensePPG": 22.1,
+        "awayOffensePPG": 25.6,
+        "homeDefenseAllowedPPG": 25.9,
+        "awayDefenseAllowedPPG": 21.8,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_17_DET_CHI",
@@ -3572,7 +6612,19 @@
       "homeWin": 0.5598,
       "projectedMargin": 1.7,
       "homeElo": 1522.3,
-      "awayElo": 1535.6
+      "awayElo": 1535.6,
+      "scoringContext": {
+        "projectedHomePoints": 26.2,
+        "projectedAwayPoints": 22.8,
+        "projectedTotal": 48.9,
+        "homeOffensePPG": 25.2,
+        "awayOffensePPG": 26.1,
+        "homeDefenseAllowedPPG": 19.4,
+        "awayDefenseAllowedPPG": 27.1,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_17_PHI_SF",
@@ -3586,7 +6638,19 @@
       "homeWin": 0.6085,
       "projectedMargin": 3.1,
       "homeElo": 1571.5,
-      "awayElo": 1549.9
+      "awayElo": 1549.9,
+      "scoringContext": {
+        "projectedHomePoints": 24.7,
+        "projectedAwayPoints": 19.9,
+        "projectedTotal": 44.6,
+        "homeOffensePPG": 26.5,
+        "awayOffensePPG": 20.6,
+        "homeDefenseAllowedPPG": 19.2,
+        "awayDefenseAllowedPPG": 22.9,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_17_HOU_GB",
@@ -3600,7 +6664,19 @@
       "homeWin": 0.5988,
       "projectedMargin": 2.8,
       "homeElo": 1516.7,
-      "awayElo": 1502.1
+      "awayElo": 1502.1,
+      "scoringContext": {
+        "projectedHomePoints": 22.6,
+        "projectedAwayPoints": 23.1,
+        "projectedTotal": 45.7,
+        "homeOffensePPG": 20.4,
+        "awayOffensePPG": 21.8,
+        "homeDefenseAllowedPPG": 24.4,
+        "awayDefenseAllowedPPG": 24.9,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_18_ATL_CAR",
@@ -3614,7 +6690,19 @@
       "homeWin": 0.5389,
       "projectedMargin": 1.1,
       "homeElo": 1460.6,
-      "awayElo": 1488.5
+      "awayElo": 1488.5,
+      "scoringContext": {
+        "projectedHomePoints": 24.6,
+        "projectedAwayPoints": 24.1,
+        "projectedTotal": 48.6,
+        "homeOffensePPG": 26.4,
+        "awayOffensePPG": 23.2,
+        "homeDefenseAllowedPPG": 24.9,
+        "awayDefenseAllowedPPG": 22.8,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_18_CHI_MIN",
@@ -3628,7 +6716,19 @@
       "homeWin": 0.6406,
       "projectedMargin": 4.0,
       "homeElo": 1567.7,
-      "awayElo": 1522.3
+      "awayElo": 1522.3,
+      "scoringContext": {
+        "projectedHomePoints": 20.7,
+        "projectedAwayPoints": 21.4,
+        "projectedTotal": 42.1,
+        "homeOffensePPG": 22.0,
+        "awayOffensePPG": 25.2,
+        "homeDefenseAllowedPPG": 17.6,
+        "awayDefenseAllowedPPG": 19.4,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_18_CLE_CIN",
@@ -3642,7 +6742,19 @@
       "homeWin": 0.5989,
       "projectedMargin": 2.8,
       "homeElo": 1485.6,
-      "awayElo": 1470.9
+      "awayElo": 1470.9,
+      "scoringContext": {
+        "projectedHomePoints": 23.2,
+        "projectedAwayPoints": 21.6,
+        "projectedTotal": 44.9,
+        "homeOffensePPG": 23.4,
+        "awayOffensePPG": 21.4,
+        "homeDefenseAllowedPPG": 21.9,
+        "awayDefenseAllowedPPG": 23.1,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_18_DAL_WAS",
@@ -3656,7 +6768,19 @@
       "homeWin": 0.5585,
       "projectedMargin": 1.6,
       "homeElo": 1463.3,
-      "awayElo": 1477.4
+      "awayElo": 1477.4,
+      "scoringContext": {
+        "projectedHomePoints": 23.7,
+        "projectedAwayPoints": 25.9,
+        "projectedTotal": 49.6,
+        "homeOffensePPG": 22.2,
+        "awayOffensePPG": 25.3,
+        "homeDefenseAllowedPPG": 26.5,
+        "awayDefenseAllowedPPG": 25.1,
+        "homeSampleGames": 4,
+        "awaySampleGames": 5,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_18_DET_GB",
@@ -3670,7 +6794,19 @@
       "homeWin": 0.5519,
       "projectedMargin": 1.4,
       "homeElo": 1516.7,
-      "awayElo": 1535.6
+      "awayElo": 1535.6,
+      "scoringContext": {
+        "projectedHomePoints": 23.8,
+        "projectedAwayPoints": 25.2,
+        "projectedTotal": 49.0,
+        "homeOffensePPG": 20.4,
+        "awayOffensePPG": 26.1,
+        "homeDefenseAllowedPPG": 24.4,
+        "awayDefenseAllowedPPG": 27.1,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_18_JAX_IND",
@@ -3684,7 +6820,19 @@
       "homeWin": 0.504,
       "projectedMargin": 0.1,
       "homeElo": 1485.0,
-      "awayElo": 1537.2
+      "awayElo": 1537.2,
+      "scoringContext": {
+        "projectedHomePoints": 20.9,
+        "projectedAwayPoints": 24.2,
+        "projectedTotal": 45.2,
+        "homeOffensePPG": 24.0,
+        "awayOffensePPG": 24.2,
+        "homeDefenseAllowedPPG": 24.2,
+        "awayDefenseAllowedPPG": 17.9,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_18_LAC_DEN",
@@ -3698,7 +6846,19 @@
       "homeWin": 0.6778,
       "projectedMargin": 5.2,
       "homeElo": 1558.3,
-      "awayElo": 1484.1
+      "awayElo": 1484.1,
+      "scoringContext": {
+        "projectedHomePoints": 22.5,
+        "projectedAwayPoints": 21.3,
+        "projectedTotal": 43.8,
+        "homeOffensePPG": 20.5,
+        "awayOffensePPG": 19.6,
+        "homeDefenseAllowedPPG": 23.0,
+        "awayDefenseAllowedPPG": 24.5,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_18_LV_KC",
@@ -3712,7 +6872,19 @@
       "homeWin": 0.7179,
       "projectedMargin": 6.5,
       "homeElo": 1550.2,
-      "awayElo": 1442.9
+      "awayElo": 1442.9,
+      "scoringContext": {
+        "projectedHomePoints": 23.9,
+        "projectedAwayPoints": 23.2,
+        "projectedTotal": 47.1,
+        "homeOffensePPG": 26.0,
+        "awayOffensePPG": 25.6,
+        "homeDefenseAllowedPPG": 20.9,
+        "awayDefenseAllowedPPG": 21.8,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_18_MIA_NE",
@@ -3726,7 +6898,19 @@
       "homeWin": 0.7039,
       "projectedMargin": 6.0,
       "homeElo": 1546.0,
-      "awayElo": 1450.6
+      "awayElo": 1450.6,
+      "scoringContext": {
+        "projectedHomePoints": 21.6,
+        "projectedAwayPoints": 18.9,
+        "projectedTotal": 40.6,
+        "homeOffensePPG": 19.4,
+        "awayOffensePPG": 17.0,
+        "homeDefenseAllowedPPG": 20.9,
+        "awayDefenseAllowedPPG": 23.9,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_18_NYJ_BUF",
@@ -3740,7 +6924,19 @@
       "homeWin": 0.7846,
       "projectedMargin": 9.0,
       "homeElo": 1579.3,
-      "awayElo": 1409.8
+      "awayElo": 1409.8,
+      "scoringContext": {
+        "projectedHomePoints": 24.4,
+        "projectedAwayPoints": 22.7,
+        "projectedTotal": 47.1,
+        "homeOffensePPG": 27.1,
+        "awayOffensePPG": 20.8,
+        "homeDefenseAllowedPPG": 24.6,
+        "awayDefenseAllowedPPG": 21.8,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_18_PHI_NYG",
@@ -3754,7 +6950,19 @@
       "homeWin": 0.432,
       "projectedMargin": -1.9,
       "homeElo": 1447.4,
-      "awayElo": 1549.9
+      "awayElo": 1549.9,
+      "scoringContext": {
+        "projectedHomePoints": 22.2,
+        "projectedAwayPoints": 20.9,
+        "projectedTotal": 43.1,
+        "homeOffensePPG": 21.5,
+        "awayOffensePPG": 20.6,
+        "homeDefenseAllowedPPG": 21.1,
+        "awayDefenseAllowedPPG": 22.9,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_18_PIT_BAL",
@@ -3768,7 +6976,19 @@
       "homeWin": 0.6064,
       "projectedMargin": 3.0,
       "homeElo": 1536.2,
-      "awayElo": 1516.1
+      "awayElo": 1516.1,
+      "scoringContext": {
+        "projectedHomePoints": 23.9,
+        "projectedAwayPoints": 22.1,
+        "projectedTotal": 46.0,
+        "homeOffensePPG": 25.8,
+        "awayOffensePPG": 20.9,
+        "homeDefenseAllowedPPG": 23.2,
+        "awayDefenseAllowedPPG": 22.1,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_18_SEA_LA",
@@ -3782,7 +7002,19 @@
       "homeWin": 0.5163,
       "projectedMargin": 0.5,
       "homeElo": 1552.7,
-      "awayElo": 1596.4
+      "awayElo": 1596.4,
+      "scoringContext": {
+        "projectedHomePoints": 21.1,
+        "projectedAwayPoints": 23.0,
+        "projectedTotal": 44.1,
+        "homeOffensePPG": 21.9,
+        "awayOffensePPG": 24.4,
+        "homeDefenseAllowedPPG": 21.6,
+        "awayDefenseAllowedPPG": 20.4,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_18_SF_ARI",
@@ -3796,7 +7028,19 @@
       "homeWin": 0.3613,
       "projectedMargin": -4.0,
       "homeElo": 1417.6,
-      "awayElo": 1571.5
+      "awayElo": 1571.5,
+      "scoringContext": {
+        "projectedHomePoints": 20.7,
+        "projectedAwayPoints": 26.2,
+        "projectedTotal": 46.9,
+        "homeOffensePPG": 22.1,
+        "awayOffensePPG": 26.5,
+        "homeDefenseAllowedPPG": 25.9,
+        "awayDefenseAllowedPPG": 19.2,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_18_TB_NO",
@@ -3810,7 +7054,19 @@
       "homeWin": 0.5444,
       "projectedMargin": 1.2,
       "homeElo": 1439.4,
-      "awayElo": 1463.4
+      "awayElo": 1463.4,
+      "scoringContext": {
+        "projectedHomePoints": 23.4,
+        "projectedAwayPoints": 24.2,
+        "projectedTotal": 47.6,
+        "homeOffensePPG": 24.4,
+        "awayOffensePPG": 21.1,
+        "homeDefenseAllowedPPG": 27.2,
+        "awayDefenseAllowedPPG": 22.4,
+        "homeSampleGames": 4,
+        "awaySampleGames": 5,
+        "status": "experimental-not-calibrated"
+      }
     },
     {
       "id": "2026_18_TEN_HOU",
@@ -3824,7 +7080,19 @@
       "homeWin": 0.7372,
       "projectedMargin": 7.2,
       "homeElo": 1502.1,
-      "awayElo": 1378.0
+      "awayElo": 1378.0,
+      "scoringContext": {
+        "projectedHomePoints": 21.7,
+        "projectedAwayPoints": 21.5,
+        "projectedTotal": 43.2,
+        "homeOffensePPG": 21.8,
+        "awayOffensePPG": 18.1,
+        "homeDefenseAllowedPPG": 24.9,
+        "awayDefenseAllowedPPG": 21.6,
+        "homeSampleGames": 4,
+        "awaySampleGames": 4,
+        "status": "experimental-not-calibrated"
+      }
     }
   ],
   "ratings": [
