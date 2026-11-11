@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "model": "elo-baseline-0.1 + scoring-context-0.1",
-  "generatedAt": "2026-11-10T18:43:16.635234+00:00",
+  "generatedAt": "2026-11-11T18:45:53.785108+00:00",
   "source": "https://raw.githubusercontent.com/nflverse/nfldata/master/data/games.csv",
   "season": 2026,
   "assumptions": {
@@ -3429,32 +3429,6 @@
       }
     },
     {
-      "id": "2026_09_LV_SF",
-      "date": "2026-11-08",
-      "week": "9",
-      "home": "SF",
-      "away": "LV",
-      "status": "final",
-      "homeScore": 38.0,
-      "awayScore": 17.0,
-      "homeWin": 0.7597,
-      "projectedMargin": 8.0,
-      "homeElo": 1577.2,
-      "awayElo": 1432.2,
-      "scoringContext": {
-        "projectedHomePoints": 26.4,
-        "projectedAwayPoints": 23.4,
-        "projectedTotal": 49.7,
-        "homeOffensePPG": 26.1,
-        "awayOffensePPG": 25.9,
-        "homeDefenseAllowedPPG": 20.8,
-        "awayDefenseAllowedPPG": 26.7,
-        "homeSampleGames": 7,
-        "awaySampleGames": 8,
-        "status": "experimental-not-calibrated"
-      }
-    },
-    {
       "id": "2026_09_ARI_SEA",
       "date": "2026-11-08",
       "week": "9",
@@ -3502,6 +3476,32 @@
         "homeDefenseAllowedPPG": 21.0,
         "awayDefenseAllowedPPG": 21.2,
         "homeSampleGames": 8,
+        "awaySampleGames": 8,
+        "status": "experimental-not-calibrated"
+      }
+    },
+    {
+      "id": "2026_09_LV_SF",
+      "date": "2026-11-08",
+      "week": "9",
+      "home": "SF",
+      "away": "LV",
+      "status": "final",
+      "homeScore": 38.0,
+      "awayScore": 17.0,
+      "homeWin": 0.7597,
+      "projectedMargin": 8.0,
+      "homeElo": 1577.2,
+      "awayElo": 1432.2,
+      "scoringContext": {
+        "projectedHomePoints": 26.4,
+        "projectedAwayPoints": 23.4,
+        "projectedTotal": 49.7,
+        "homeOffensePPG": 26.1,
+        "awayOffensePPG": 25.9,
+        "homeDefenseAllowedPPG": 20.8,
+        "awayDefenseAllowedPPG": 26.7,
+        "homeSampleGames": 7,
         "awaySampleGames": 8,
         "status": "experimental-not-calibrated"
       }
