@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "model": "elo-baseline-0.1 + scoring-context-0.1",
-  "generatedAt": "2026-11-11T18:45:53.785108+00:00",
+  "generatedAt": "2026-11-12T18:59:30.944916+00:00",
   "source": "https://raw.githubusercontent.com/nflverse/nfldata/master/data/games.csv",
   "season": 2026,
   "assumptions": {
