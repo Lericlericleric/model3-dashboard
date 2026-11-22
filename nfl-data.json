@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "model": "elo-baseline-0.1 + scoring-context-0.1",
-  "generatedAt": "2026-11-21T18:05:40.538486+00:00",
+  "generatedAt": "2026-11-22T18:34:59.060104+00:00",
   "source": "https://raw.githubusercontent.com/nflverse/nfldata/master/data/games.csv",
   "season": 2026,
   "assumptions": {
@@ -4001,32 +4001,6 @@
       }
     },
     {
-      "id": "2026_11_JAX_NYG",
-      "date": "2026-11-22",
-      "week": "11",
-      "home": "NYG",
-      "away": "JAX",
-      "status": "scheduled",
-      "homeScore": null,
-      "awayScore": null,
-      "homeWin": 0.4287,
-      "projectedMargin": -2.0,
-      "homeElo": 1452.4,
-      "awayElo": 1557.3,
-      "scoringContext": {
-        "projectedHomePoints": 20.4,
-        "projectedAwayPoints": 24.6,
-        "projectedTotal": 45.0,
-        "homeOffensePPG": 22.1,
-        "awayOffensePPG": 27.1,
-        "homeDefenseAllowedPPG": 22.2,
-        "awayDefenseAllowedPPG": 18.7,
-        "homeSampleGames": 8,
-        "awaySampleGames": 8,
-        "status": "experimental-not-calibrated"
-      }
-    },
-    {
       "id": "2026_11_MIA_BUF",
       "date": "2026-11-22",
       "week": "11",
@@ -4073,6 +4047,32 @@
         "awayOffensePPG": 21.8,
         "homeDefenseAllowedPPG": 19.8,
         "awayDefenseAllowedPPG": 24.6,
+        "homeSampleGames": 8,
+        "awaySampleGames": 8,
+        "status": "experimental-not-calibrated"
+      }
+    },
+    {
+      "id": "2026_11_PIT_PHI",
+      "date": "2026-11-22",
+      "week": "11",
+      "home": "PHI",
+      "away": "PIT",
+      "status": "scheduled",
+      "homeScore": null,
+      "awayScore": null,
+      "homeWin": 0.5087,
+      "projectedMargin": 0.2,
+      "homeElo": 1491.2,
+      "awayElo": 1540.1,
+      "scoringContext": {
+        "projectedHomePoints": 19.7,
+        "projectedAwayPoints": 23.2,
+        "projectedTotal": 42.9,
+        "homeOffensePPG": 17.8,
+        "awayOffensePPG": 22.3,
+        "homeDefenseAllowedPPG": 24.1,
+        "awayDefenseAllowedPPG": 21.6,
         "homeSampleGames": 8,
         "awaySampleGames": 8,
         "status": "experimental-not-calibrated"
@@ -4157,6 +4157,32 @@
       }
     },
     {
+      "id": "2026_11_JAX_NYG",
+      "date": "2026-11-22",
+      "week": "11",
+      "home": "NYG",
+      "away": "JAX",
+      "status": "scheduled",
+      "homeScore": null,
+      "awayScore": null,
+      "homeWin": 0.4287,
+      "projectedMargin": -2.0,
+      "homeElo": 1452.4,
+      "awayElo": 1557.3,
+      "scoringContext": {
+        "projectedHomePoints": 20.4,
+        "projectedAwayPoints": 24.6,
+        "projectedTotal": 45.0,
+        "homeOffensePPG": 22.1,
+        "awayOffensePPG": 27.1,
+        "homeDefenseAllowedPPG": 22.2,
+        "awayDefenseAllowedPPG": 18.7,
+        "homeSampleGames": 8,
+        "awaySampleGames": 8,
+        "status": "experimental-not-calibrated"
+      }
+    },
+    {
       "id": "2026_11_LV_DEN",
       "date": "2026-11-22",
       "week": "11",
@@ -4177,32 +4203,6 @@
         "awayOffensePPG": 24.0,
         "homeDefenseAllowedPPG": 20.4,
         "awayDefenseAllowedPPG": 29.3,
-        "homeSampleGames": 8,
-        "awaySampleGames": 8,
-        "status": "experimental-not-calibrated"
-      }
-    },
-    {
-      "id": "2026_11_PIT_PHI",
-      "date": "2026-11-22",
-      "week": "11",
-      "home": "PHI",
-      "away": "PIT",
-      "status": "scheduled",
-      "homeScore": null,
-      "awayScore": null,
-      "homeWin": 0.5087,
-      "projectedMargin": 0.2,
-      "homeElo": 1491.2,
-      "awayElo": 1540.1,
-      "scoringContext": {
-        "projectedHomePoints": 19.7,
-        "projectedAwayPoints": 23.2,
-        "projectedTotal": 42.9,
-        "homeOffensePPG": 17.8,
-        "awayOffensePPG": 22.3,
-        "homeDefenseAllowedPPG": 24.1,
-        "awayDefenseAllowedPPG": 21.6,
         "homeSampleGames": 8,
         "awaySampleGames": 8,
         "status": "experimental-not-calibrated"
